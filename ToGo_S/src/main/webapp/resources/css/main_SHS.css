@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+#home_div{
+	background: #356ba2;
+	width: "100%";
+	height: "500px";
+	padding: "100px";
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.btn {
+  white-space: normal;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 0;
+}

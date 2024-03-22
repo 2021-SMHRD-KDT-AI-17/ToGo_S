@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!doctype html>
+    pageEncoding="UTF-8"%><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="fontawesome/css/all.min.css" type="text/css" /> 
-    <link rel="stylesheet" href="css/slick.css" type="text/css" />   
-    <link rel="stylesheet" href="css/tooplate-simply-amazed.css" type="text/css" />
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="resources/fontawesome/css/all.min.css" type="text/css" /> 
+    <link rel="stylesheet" href="resources/css/slick.css" type="text/css" />   
+    <link rel="stylesheet" href="resources/css/tooplate-simply-amazed.css" type="text/css" />
 <!--
 
 Tooplate 2123 Simply Amazed
@@ -28,22 +27,24 @@ https://www.tooplate.com/view/2123-simply-amazed
                 <div class="collapse navbar-collapse single-page-nav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#section-1"><span class="icn"><i class="fas fa-2x fa-air-freshener"></i></span> Our Company</a>
+                            <a class="nav-link" href="#section-1"><span class="icn"><i class="fas fa-2x fa-air-freshener"></i></span> 주문관리</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#section-2"><span class="icn"><i class="fab fa-2x fa-battle-net"></i></span> Our Work</a>
+                            <a class="nav-link" href="#section-2"><span class="icn"><i class="fab fa-2x fa-battle-net"></i></span>예약관리</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#section-3"><span class="icn"><i class="far fa-2x fa-images"></i></span> Gallery</a>
+                            <a class="nav-link" href="#section-3"><span class="icn"><i class="far fa-2x fa-images"></i></span> 메뉴관리</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#section-4"><span class="icn"><i class="far fa-2x fa-comments"></i></span> Contact</a>
+                            <a class="nav-link" href="#section-4"><span class="icn"><i class="far fa-2x fa-comments"></i></span>메출 관리</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
         
+        
+        <!-- 헤드 끝 --------------------------------------------------------------------------------------------------------------------------------                        -->
         <button class="navbar-button collapsed" type="button">
             <span class="menu_icon">
                 <span class="icon-bar"></span>
@@ -51,9 +52,9 @@ https://www.tooplate.com/view/2123-simply-amazed
                 <span class="icon-bar"></span>
             </span>
         </button>
-        
+        <!-- 하단바 버튼------------------------------------------------------------------------------- -->
         <main id="content-box" class="order-first">
-            <div class="banner-section section parallax-window" data-parallax="scroll" data-image-src="img/section-1-bg.jpg" id="section-1">
+            <div class="banner-section section parallax-window" data-parallax="scroll" data-image-src="resources/img/section-1-bg.jpg" id="section-1">
                 <div class="container">
                     <div class="item">
                         <div class="bg-blue-transparent logo-fa"><span><i class="fas fa-2x fa-atom"></i></span> Simply Amazed</div>
@@ -62,6 +63,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                 </div>
             </div>
         
+        <!-- 주문관리------------------------------------------------------------------------------------ -->
             <section class="work-section section" id="section-2">
                 <div class="container">
                     <div class="row">
@@ -93,7 +95,8 @@ https://www.tooplate.com/view/2123-simply-amazed
                 </div>
             </section>
 
-            <section class="gallery-section section parallax-window" data-parallax="scroll" data-image-src="img/section-3-bg.jpg" id="section-3">
+		 <!-- 예약 관리------------------------------------------------------------------------------------ -->
+            <section class="gallery-section section parallax-window" data-parallax="scroll" data-image-src="resources/img/section-3-bg.jpg" id="section-3">
                 <div class="container">
                     <div class="title text-right">
                         <h2>Our Gallery</h2>
@@ -109,7 +112,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             </figcaption>
                         </figure>
                         <figure class="effect-julia item">
-                            <img src="img/gallery-img-02.jpg" alt="Image">
+                            <img src="resources/img/gallery-img-02.jpg" alt="Image">
                             <figcaption>
                                 <div>
                                     <p>Julia dances in the deep dark</p>
@@ -118,7 +121,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             </figcaption>
                         </figure>
                         <figure class="effect-julia item">
-                            <img src="img/gallery-img-03.jpg" alt="Image">
+                            <img src="resources/img/gallery-img-03.jpg" alt="Image">
                             <figcaption>
                                 <div>
                                     <p>Julia dances in the deep dark</p>
@@ -127,7 +130,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             </figcaption>
                         </figure>
                         <figure class="effect-julia item">
-                            <img src="img/gallery-img-04.jpg" alt="Image">
+                            <img src="resources/img/gallery-img-04.jpg" alt="Image">
                             <figcaption>
                                 <div>
                                     <p>Julia dances in the deep dark</p>
@@ -136,7 +139,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             </figcaption>
                         </figure>
                         <figure class="effect-julia item">
-                            <img src="img/gallery-img-05.jpg" alt="Image">
+                            <img src="resources/img/gallery-img-05.jpg" alt="Image">
                             <figcaption>
                                 <div>
                                     <p>Julia dances in the deep dark</p>
@@ -145,7 +148,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             </figcaption>
                         </figure>
                         <figure class="effect-julia item">
-                            <img src="img/gallery-img-06.jpg" alt="Image">
+                            <img src="resources/img/gallery-img-06.jpg" alt="Image">
                             <figcaption>
                                 <div>
                                     <p>Julia dances in the deep dark</p>
@@ -154,7 +157,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             </figcaption>
                         </figure>
                         <figure class="effect-julia item">
-                            <img src="img/gallery-img-07.jpg" alt="Image">
+                            <img src="resources/img/gallery-img-07.jpg" alt="Image">
                             <figcaption>
                                 <div>
                                     <p>Julia dances in the deep dark</p>
@@ -163,7 +166,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             </figcaption>
                         </figure>
                         <figure class="effect-julia item">
-                            <img src="img/gallery-img-08.jpg" alt="Image">
+                            <img src="resources/img/gallery-img-08.jpg" alt="Image">
                             <figcaption>
                                 <div>
                                     <p>Julia dances in the deep dark</p>
@@ -172,7 +175,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             </figcaption>
                         </figure>
                         <figure class="effect-julia item">
-                            <img src="img/gallery-img-09.jpg" alt="Image">
+                            <img src="resources/img/gallery-img-09.jpg" alt="Image">
                             <figcaption>
                                 <div>
                                     <p>Julia dances in the deep dark</p>
@@ -183,7 +186,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                     </div>
                 </div>
             </section>
-
+		 <!-- 메뉴관리------------------------------------------------------------------------------------ -->
             <section class="contact-section section" id="section-4">
                 <div class="container">
                     <div class="title">
@@ -246,13 +249,15 @@ https://www.tooplate.com/view/2123-simply-amazed
                     </div>
                 </footer>
             </section>
+            
+             <!-- 매출관리------------------------------------------------------------------------------------ -->
         </main>
     </div>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.singlePageNav.min.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="js/templatemo-script.js"></script>
+    <script src="resources/js/jquery-3.3.1.min.js"></script>
+    <script src="resources/js/bootstrap.bundle.min.js"></script>
+    <script src="resources/js/jquery.singlePageNav.min.js"></script>
+    <script src="resources/js/slick.js"></script>
+    <script src="resources/js/parallax.min.js"></script>
+    <script src="resources/js/templatemo-script.js"></script>
 </body>
 </html>
