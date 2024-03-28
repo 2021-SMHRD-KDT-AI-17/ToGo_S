@@ -1,17 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page import="java.sql.*" %>
+<%@ page import="kr.smhrd.mapper.OrderMapper" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>매출 내역</title>
+    <title>오늘 매출 내역</title>
     <style>
         table {
             border-collapse: collapse;
@@ -30,40 +25,43 @@
 </head>
 <body>
 
-
 <h2>오늘 매출 내역</h2>
 
 <table>
     <tr>
         <th>날짜</th>
         <th>상품명</th>
-       
         <th>가격</th>
-        <th>총 매출</th>
     </tr>
-    <tr>
-        <td>2024-03-28</td>
-        <td>상품 A</td>
-        
-        <td>10000</td>
-        <td>100000</td>
-    </tr>
-    <tr>
-        <td>2024-03-28</td>
-        <td>상품 B</td>
-        
-        <td>15000</td>
-        <td>225000</td>
-    </tr>
-    <tr>
-        <td>2024-03-28</td>
-        <td>상품 C</td>
-        
-        <td>15000</td>
-        <td>225000</td>
-    </tr>
-    <!-- 추가적인 매출 내역을 원하는 만큼 여기에 추가 -->
-</table>
+   
+    <%
+    ResultSet rs = null;
+    try {
+        rs = OrderMapper.getSalesData();
+        while (rs.next()) {
+    %>
+            <!-- 여기에 데이터 출력 코드를 작성합니다 -->
 
+             <tr>
+                <td><%= rs.getString("ordered_at") %></td>
+                <td><%= rs.getString("mb_id") %></td>
+                <td><%= rs.getInt("order_total_amount") %></td>
+            </tr> 
+    <%
+        }
+    } catch (SQLException e) {
+        e.printStackTrace(); 
+    } finally {
+        if (rs != null) {
+            try {
+                rs.close(); 
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    %>
+
+ </table>
 </body>
 </html>
