@@ -61,6 +61,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                     <div class="item">
                         <div class="bg-blue-transparent logo-fa"><span><i class="fas fa-2x fa-atom"></i></span> Simply Amazed</div>
                         <div class="bg-blue-transparent simple"><p>Your simplest HTML template, the most amazing page ever, yet free!</p></div>
+                        <a href="goOrder">주문하기 페이지로 가기</a>
                     </div>
                 </div>
             </div>

@@ -24,4 +24,9 @@ public class OrderController {
 		return "orderToday";
 	}
 	
+	@RequestMapping("/goOrder")
+	public String goOrder() {
+		
+		return "StoresOrder";
+	}
 }
