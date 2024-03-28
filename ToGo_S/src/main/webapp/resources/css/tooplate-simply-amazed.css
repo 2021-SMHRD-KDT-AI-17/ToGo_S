@@ -977,13 +977,15 @@ figure.effect-julia:hover p {
 
 .contact-section .title { margin-bottom: 50px; }
 
-.contact-section .title h3 {
+.contact-section .title h1 {
   	
   color: #fff;
   font-size: 34px;
+  font-weight: bold;
+  text-align: start;
 }
 
-.contact-section .contact-form .form-group { margin-bottom: 24px; }
+.contact-section .contact-form .form-group  { margin-bottom: 24px; }
 .tm-contact-item-inner { max-width: 360px; }
 .tm-contact-item-inner-2 { max-width: 330px; }
 

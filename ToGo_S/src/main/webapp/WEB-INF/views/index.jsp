@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%><!doctype html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -191,9 +192,11 @@ https://www.tooplate.com/view/2123-simply-amazed
             <section class="contact-section section" id="section-4">
                 <div class="container">
                     <div class="title">
-                        <h3>매출 관리</h3>
+                        <h1>매출 관리</h1>
                     </div>
-                    <ul class="check">
+                   <div class="wrap">
+				    
+				    <ul class="check">
                         <li class="today">
                             <a class="nav-link" href=""><span class=""><i class=""></i></span>현재매출 확인</a>
                         </li>
@@ -201,9 +204,11 @@ https://www.tooplate.com/view/2123-simply-amazed
                             <a class="nav-link" href=""><span class=""><i class=""></i></span>어제매출 확인</a>
                         </li>
                         <li class="month">
-                            <a class="nav-link" href=""><span class=""><i class=""></i></span>월간매출 확인</a>
+                            <a class="nav-link" href="goOrderMonth"><span class=""><i class=""></i></span>월간매출 확인</a>
                         </li>
                     </ul>
+				    
+				  </div>
 
                
                
