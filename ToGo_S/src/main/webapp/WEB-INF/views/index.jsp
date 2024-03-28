@@ -31,7 +31,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                             <a class="nav-link" href="#section-1"><span class="icn"><i class="fas fa-2x fa-air-freshener"></i></span> 주문관리</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="StoresRes"><span class="icn"><i class="fab fa-2x fa-battle-net"></i></span>예약관리</a>
+                            <a class="nav-link" href="goRes"><span class="icn"><i class="fab fa-2x fa-battle-net"></i></span>예약관리</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#section-3"><span class="icn"><i class="far fa-2x fa-images"></i></span> 메뉴관리</a>
