@@ -19,7 +19,7 @@ public class StoresController {
 	public String storeLogin(Stores store, HttpSession session) {
 		Stores loginStore = storeMapper.storeLogin(store);
 		session.setAttribute("loginStore", loginStore);
-		if ((loginStore !=null ) && (loginStore.getStore_leave().equals("0"))) {
+		if ((loginStore !=null ) && (loginStore.getStore_leave().equals("N"))) {
 			return "index";
 		}else {
 			return "login";
