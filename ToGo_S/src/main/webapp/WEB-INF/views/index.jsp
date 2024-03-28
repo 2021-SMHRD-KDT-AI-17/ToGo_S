@@ -193,21 +193,42 @@ https://www.tooplate.com/view/2123-simply-amazed
             <section class="contact-section section" id="section-4">
                 <div class="container">
                     <div class="title">
+                    
                         <h1>매출 관리</h1>
                     </div>
                    <div class="wrap">
 				    
-				    <ul class="check">
-                        <li class="today">
-                            <a class="nav-link" href=""><span class=""><i class=""></i></span>현재매출 확인</a>
-                        </li>
-                        <li class="yesterday">
-                            <a class="nav-link" href=""><span class=""><i class=""></i></span>어제매출 확인</a>
-                        </li>
-                        <li class="month">
-                            <a class="nav-link" href="goOrderMonth"><span class=""><i class=""></i></span>월간매출 확인</a>
-                        </li>
-                    </ul>
+				   
+                            <a href="goOrderToday"><button class="btn-1">오늘 매출 확인</button></a>
+                        
+                            <a href="goOrderYesterday"><button class="btn-1">어제 매출 확인</button></a> 
+                       
+                            <a href="goOrderMonth"><button class="btn-1">월간 매출 확인</button></a>
+                            <style>
+    /* 기본 버튼 스타일 */
+    .btn-1 {
+        background-color: gray; /* 버튼 배경색 */
+        border: 0; /* 테두리 없음 */
+        color: white; /* 텍스트 색상 */
+        padding: 10px 20px; /* 안쪽 여백 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        text-decoration: none; /* 텍스트에 밑줄 없음 */
+        display: inline-block; /* 인라인 요소로 표시 */
+        font-size: 16px; /* 폰트 크기 */
+        margin: 4px 2px; /* 바깥쪽 여백 */
+        cursor: pointer; /* 커서 스타일 */
+        border-radius: 20px; /* 버튼 모서리 둥글게 */
+        margin-right: 50px;
+    }
+
+    /* 호버 효과 */
+    .btn-1:hover {
+        background-color: lightgreen; /* 호버 시 배경색 변경 */
+        color : black;
+        
+    }
+</style>
+                      
 				    
 				  </div>
 

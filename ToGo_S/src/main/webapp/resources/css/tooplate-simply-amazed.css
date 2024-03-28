@@ -1053,7 +1053,7 @@ figure.effect-julia:hover p {
 /* <<< footer >>> */
 .footer {
   position: relative;
-  background-color: #6699cc;
+  background-color: #393f45;
   color: #fff;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -1061,6 +1061,7 @@ figure.effect-julia:hover p {
   margin-top: 30px;
   /* <<< Dummy Side >>> */
 }
+
 
 @media (min-height: 600px){  
   .contact-section { position: relative; }
