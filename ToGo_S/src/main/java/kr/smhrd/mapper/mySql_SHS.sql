@@ -25,7 +25,7 @@ create table c_member(
 insert into c_member values('123','123','123','123');
 
 -- 소비자 조회
-select * from member;
+select * from menus where store_id = "test1";
 
 
 drop table seller_member;

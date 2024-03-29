@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%><!doctype html>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
 <head>
@@ -103,90 +104,30 @@ https://www.tooplate.com/view/2123-simply-amazed
             <section class="gallery-section section parallax-window" data-parallax="scroll" data-image-src="resources/img/section-3-bg.jpg" id="section-3">
                 <div class="container">
                     <div class="title text-right">
-                        <h2>Our Gallery</h2>
+                        <h2> 메뉴 관리 </h2>
+                        
+                        <table style ="border:  1px solid black;">
+                        	<tr>
+                        		<th>번호</th>
+                        		<th>이름</th>
+                        		<th>가격</th>
+                        		<th>설명</th>
+                        	</tr>
+
+							<c:forEach items="${m_list}" var="m" varStatus="status">
+								<tr >
+									<td>${status.count }</td>
+									<td>${m.menu_name}</td>
+									<td>${m.menu_price}</td>
+									<td>${m.menu_desc}</td>
+								</tr>
+							</c:forEach>
+						</table>
+						
                     </div>
                     <div class="mx-auto gallery-slider">
-                        <figure class="effect-julia item">
-                            <img src="img/gallery-img-01.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-julia item">
-                            <img src="resources/img/gallery-img-02.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-julia item">
-                            <img src="resources/img/gallery-img-03.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-julia item">
-                            <img src="resources/img/gallery-img-04.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-julia item">
-                            <img src="resources/img/gallery-img-05.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-julia item">
-                            <img src="resources/img/gallery-img-06.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-julia item">
-                            <img src="resources/img/gallery-img-07.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-julia item">
-                            <img src="resources/img/gallery-img-08.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-julia item">
-                            <img src="resources/img/gallery-img-09.jpg" alt="Image">
-                            <figcaption>
-                                <div>
-                                    <p>Julia dances in the deep dark</p>
-                                </div>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
+                    <button > 추가하기 </button>
+                        
                     </div>
                 </div>
             </section>
