@@ -57,47 +57,106 @@ https://www.tooplate.com/view/2123-simply-amazed
         </button>
         <!-- 하단바 버튼------------------------------------------------------------------------------- -->
         <main id="content-box" class="order-first">
-            <div class="banner-section section parallax-window" data-parallax="scroll" data-image-src="resources/img/section-1-bg.jpg" id="section-1">
+            <div class="banner-section section parallax-window" data-parallax="scroll"  id="section-1">
                 <div class="container">
                     <div class="item">
-                        <div class="bg-blue-transparent logo-fa"><span><i class="fas fa-2x fa-atom"></i></span> Simply Amazed</div>
-                        <div class="bg-blue-transparent simple"><p>Your simplest HTML template, the most amazing page ever, yet free!</p></div>
-                        <a href="goOrder">주문하기 페이지로 가기</a>
+                        <div class="item1">
+                        <h3 class="h33">주문관리</h3>
+                            <div class="tm1">
+                            
+                            <div class="item2">
+                            
+                            <div class="tm2">
+                            
+                                <div class="i2"></div>
+                                <h3 class="h22">준비중</h3>
+                                <div class="item4">
+                            <div class="tm4">
+                                <div class="i4"</div>
+                                <h3 class="h22">조리중</h3>
+                                
+                                <p></p>
+                                 
+                            </div>
+                            
+                        </div>
+                             
+                            </div>                      
+                                <p></p>
+                                  
+                            </div>
+                        </div>
+                        
+                        <div class="item2">
+                            <div class="tm3">
+                                <div class="i3"</div>
+                                <h3 class="h22">완료</h3>
+                                <p></p>
+                            </div>
+                        </div>
+                                <div class="i1"></div>
+                                
+                                
+                              
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                        
                     </div>
                 </div>
             </div>
+            
         
         <!-- 주문관리------------------------------------------------------------------------------------ -->
             <section class="work-section section" id="section-2">
+                <div class="banner-section section parallax-window" data-parallax="scroll"  id="section-1">
                 <div class="container">
-                    <div class="row">
-                        <div class="item col-md-4">
-                            <div class="tm-work-item-inner">
-                                <div class="icn"><i class="fas fa-2x fa-icons"></i></div>
-                                <h3>.01 Get An Idea</h3>
-                                <p>Simply Amazed is free HTML template provided by Tooplate website. Please tell your friends about our website. Thank you.            </p>
-                             <a href="goRes">다른페이지로</a>
+                    <div class="item">
+                        <div class="item1">
+                        <h3 class="h33">예약관리</h3>
+                            <div class="tm1">
+                            
+                            <div class="item2">
+                            
+                            <div class="tm2">
+                                <div class="i2"></div>
+                                <h3 class="h44">처리중</h3>
+                                <div class="item4">
+                            <div class="tm4">
+                                <div class="i4"</div>
+                                <h3 class="h44">예약 주문</h3>
+                                <p></p>
+                            </div>
+                        </div>
+                             
                             </div>                        
-                        </div>
-                        <div class="item col-md-4 one">
-                            <div class="tm-work-item-inner">
-                                <div class="icn"><i class="fas fa-2x fa-tools"></i></div>
-                                <h3>.02 Create It</h3>
-                                <p>This is a full-width CSS template with bootstrap 5, you can download, modify and use this layout for your simple CSS website.</p>
+                                <p></p>
+                                  
                             </div>
                         </div>
-                        <div class="item col-md-4 two">
-                            <div class="tm-work-item-inner">
-                                <div class="icn"><i class="fab fa-2x fa-phoenix-framework"></i></div>
-                                <h3>.03 Execute it</h3>
-                                <p>You are allowed to use this for your personal and commerical projects, you are not allowed to redistribute the template ZIP file on any download site.</p>
+                        
+                        <div class="item2">
+                            <div class="tm3">
+                                <div class="i3"</div>
+                                <h3 class="h44">완료</h3>
+                                <p></p>
                             </div>
                         </div>
+                                <div class="i1"></div>
+                                
+                                
+                              
+                        </div>
+                        
                     </div>
-                    <div class="title">
-                        <h2>Our Work</h2>
+                    
+                </div>
+                        
                     </div>
                 </div>
+            </div>
             </section>
 
        <!-- 예약 관리------------------------------------------------------------------------------------ -->
@@ -169,6 +228,115 @@ https://www.tooplate.com/view/2123-simply-amazed
         color : black;
         
     }
+    
+    .parallax-window { background: #393f45; }
+    
+    
+    .btn-2 {
+        background-color: gray; /* 버튼 배경색 */
+        border: 0; /* 테두리 없음 */
+        color: white; /* 텍스트 색상 */
+        padding: 10px 20px; /* 안쪽 여백 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        text-decoration: none; /* 텍스트에 밑줄 없음 */
+        display: inline-block; /* 인라인 요소로 표시 */
+        font-size: 16px; /* 폰트 크기 */
+        margin: 4px 2px; /* 바깥쪽 여백 */
+        cursor: pointer; /* 커서 스타일 */
+        border-radius: 10px; /* 버튼 모서리 둥글게 */
+        margin-top: 30px;
+         position: fixed; 
+    bottom: 180px; /* 하단 여백 */
+    right: 650px; /* 우측 여백 */
+    z-index: 999; /* 다른 요소 위에 표시되도록 설정 */
+}
+        
+    }
+
+    /* 호버 효과 */
+    .btn-2:hover {
+        background-color: gray; /* 호버 시 배경색 변경 */
+        color : black;
+        
+    }
+    
+    
+    .item1 {
+    background-color:#393f45;
+    color: #333;
+    width: 900px; 
+    height: 700px;
+    text-align: center; 
+    
+    
+    font-size: 18px; 
+    
+    
+   
+  
+}
+.work-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  min-height: 850px;
+  background-color: #393f45;
+}
+
+.h44 {
+   color: black;
+   font-size:20px;
+   font-weight: 1000;
+}
+
+.h33 {
+   color:white;
+   
+   font-size:30px;
+   font-weight: 1000;
+
+   
+}
+
+.h22 {
+   
+   font-size:20px;
+   font-weight: 1000;
+}
+ .item2 {
+   background-color: lightgray;
+    color: #333; 
+    width: 160px;
+    height: 270px; 
+    text-align: left; 
+    margin-top:50px;
+    font-size: 18px; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    
+}
+
+ 
+ .item4 {
+   background-color: lightgray; 
+    color: #333; 
+    width: 820px; 
+    height: 500px; 
+    text-align: left; 
+    margin-left:170px;
+   
+    font-size: 18px; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); 
+    
+    
+}
+    
+
+
+
+    
 </style>
                       
                 

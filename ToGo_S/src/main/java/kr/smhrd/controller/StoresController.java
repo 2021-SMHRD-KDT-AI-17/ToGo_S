@@ -7,8 +7,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.smhrd.entity.Menus;
 import kr.smhrd.entity.Stores;
 import kr.smhrd.mapper.MenusMapper;
 import kr.smhrd.mapper.StoresMapper;
@@ -36,6 +38,22 @@ public class StoresController {
 			return "login";
 		}
 		
+	}
+	
+	@RequestMapping("/goMenu")
+	public String goMenu() {
+		
+		
+		return "index_SHS";
+	}
+	
+	@RequestMapping("/updateMenu")
+	public String updateMenu( Menus menu) {
+		
+		
+		
+		System.out.println(menu.toString());
+		return "index_SHS";
 	}
 	
 }

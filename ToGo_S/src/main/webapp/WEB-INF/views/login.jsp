@@ -17,7 +17,8 @@
 </head>
 
 <body>
-		<div id="home_div" class="text-center>
+	<div id="home_div"
+		class="text-center>
 		<div class="col-lg-5 col-md-6 mb-4 contact-form">
 			<div class="form tm-contact-item-inner">
 				<form action="storeLogin" method="POST">
@@ -31,6 +32,10 @@
 						<input type="submit" class="btn btn-primary" value="로그인">
 					</div>
 				</form>
+				
+				<form action = "goMenu">
+					<input type = "submit" value = "submit">
+				</from>
 			</div>
 		</div>
 
