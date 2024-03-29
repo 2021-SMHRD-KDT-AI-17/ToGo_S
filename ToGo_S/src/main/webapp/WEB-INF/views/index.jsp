@@ -27,7 +27,7 @@ https://www.tooplate.com/view/2123-simply-amazed
         <header class="header order-last" id="tm-header">
             <nav class="navbar">
                 <div class="collapse navbar-collapse single-page-nav">
-                	
+                   
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#section-1"><span class="icn"><i class="fas fa-2x fa-air-freshener"></i></span> 주문관리</a>
@@ -76,7 +76,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                                 <div class="icn"><i class="fas fa-2x fa-icons"></i></div>
                                 <h3>.01 Get An Idea</h3>
                                 <p>Simply Amazed is free HTML template provided by Tooplate website. Please tell your friends about our website. Thank you.            </p>
-                    			<a href="goRes">다른페이지로</a>
+                             <a href="goRes">다른페이지로</a>
                             </div>                        
                         </div>
                         <div class="item col-md-4 one">
@@ -100,30 +100,30 @@ https://www.tooplate.com/view/2123-simply-amazed
                 </div>
             </section>
 
-		 <!-- 예약 관리------------------------------------------------------------------------------------ -->
+       <!-- 예약 관리------------------------------------------------------------------------------------ -->
             <section class="gallery-section section parallax-window" data-parallax="scroll" data-image-src="resources/img/section-3-bg.jpg" id="section-3">
                 <div class="container">
                     <div class="title text-right">
                         <h2> 메뉴 관리 </h2>
                         
                         <table style ="border:  1px solid black;">
-                        	<tr>
-                        		<th>번호</th>
-                        		<th>이름</th>
-                        		<th>가격</th>
-                        		<th>설명</th>
-                        	</tr>
+                           <tr>
+                              <th>번호</th>
+                              <th>이름</th>
+                              <th>가격</th>
+                              <th>설명</th>
+                           </tr>
 
-							<c:forEach items="${m_list}" var="m" varStatus="status">
-								<tr >
-									<td>${status.count }</td>
-									<td>${m.menu_name}</td>
-									<td>${m.menu_price}</td>
-									<td>${m.menu_desc}</td>
-								</tr>
-							</c:forEach>
-						</table>
-						
+                     <c:forEach items="${m_list}" var="m" varStatus="status">
+                        <tr  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                           <td>${status.count }</td>
+                           <td>${m.menu_name}</td>
+                           <td>${m.menu_price}</td>
+                           <td>${m.menu_desc}</td>
+                        </tr>
+                     </c:forEach>
+                  </table>
+                  
                     </div>
                     <div class="mx-auto gallery-slider">
                     <button > 추가하기 </button>
@@ -131,7 +131,7 @@ https://www.tooplate.com/view/2123-simply-amazed
                     </div>
                 </div>
             </section>
-		 <!-- 메뉴관리------------------------------------------------------------------------------------ -->
+       <!-- 메뉴관리------------------------------------------------------------------------------------ -->
             <section class="contact-section section" id="section-4">
                 <div class="container">
                     <div class="title">
@@ -139,8 +139,8 @@ https://www.tooplate.com/view/2123-simply-amazed
                         <h1>매출 관리</h1>
                     </div>
                    <div class="wrap">
-				    
-				   
+                
+               
                             <a href="goOrderToday"><button class="btn-1">오늘 매출 확인</button></a>
                         
                             <a href="goOrderYesterday"><button class="btn-1">어제 매출 확인</button></a> 
@@ -171,8 +171,77 @@ https://www.tooplate.com/view/2123-simply-amazed
     }
 </style>
                       
-				    
-				  </div>
+                
+              </div>
+                             <!-- 팝업창을 제외한 나머지 body 영역 어두어지는 효과 -->
+               <div class="overlay"></div>
+
+
+               <!-- Modal--------------------------------------------------------------------------------------------------------------------------- -->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div
+         class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h1 class="modal-title fs-5" id="exampleModalLabel">주문 상세</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+            </div>
+            <div class="menu-modal-box modal-body">
+               <div class="menu-modal-box-wrap"
+                  style="display: flex; justify-content: space-between; padding: 10px; box-sizing: border-box;">
+
+                  <div class="menu-img"
+                     style="height: 200px; width: 150px; background: #999;">
+                  <p id="menuImg" name="product"><input type="file"></p>
+                  
+                  
+                  </div>
+                  <div class="menu-detail"
+                     style="height: 200px; width: 300px; background: #777;">
+                     <article>
+                     <p id="menuName" name="product"> 메뉴 이름 <input type="text"> </p>
+                     
+                     <p>메뉴 가격<input type="text">  원</p>
+                     </article>
+
+                     <section class="menu-count"
+                        style="background: #555; height: 35px; width: 100%; display: flex;">
+                        <div class="menu-count-left" style="margin-left: 15px; margin-right: 15px;">
+                           <p id="menuName" name="product"> 판매여부 <input type="checkBox"> </p>
+                        </div>
+                     </section>
+                  </div>
+
+
+
+               </div>
+
+
+            </div>
+            <div class="request">
+               <div>메뉴 설명 사항</div>
+               <div style="height: 80px; width: 100%;">
+                  <textarea style="width: 100%; height: 100%;" class="request-text-box"></textarea>
+               </div>
+            </div>
+
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                           data-bs-dismiss="modal">닫기</button>
+                        <button type="" class="btn btn-primary">수정하기</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- modal 창   -->
+            <script
+                     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                     crossorigin="anonymous">
+            </script>
 
                
                
@@ -193,5 +262,65 @@ https://www.tooplate.com/view/2123-simply-amazed
     <script src="resources/js/slick.js"></script>
     <script src="resources/js/parallax.min.js"></script>
     <script src="resources/js/templatemo-script.js"></script>
+    
+    <script type="text/javascript">
+    
+       const tabList = document.querySelectorAll('.tab_menu .list li');
+       for (var i = 0; i < tabList.length; i++) {
+          tabList[i].querySelector('.btn').addEventListener('click',
+                function(e) {
+                   e.preventDefault();
+                   for (var j = 0; j < tabList.length; j++) {
+                      tabList[j].classList.remove('is_on');
+                   }
+                   this.parentNode.classList.add('is_on');
+                });
+       }
+   
+       document.getElementById("trigger").addEventListener("click",
+             function() {
+                var popup = document.getElementById("popup");
+                var overlay = document.querySelector(".overlay");
+                var body = document.body;
+   
+                popup.style.display = "block";
+                overlay.style.display = "block";
+                body.classList.add("blur");
+                body.style.overflow = "hidden";
+   
+                // 서서히 나타나는 애니메이션 적용
+                setTimeout(function() {
+                   popup.style.opacity = "1";
+                }, 50); // 약간의 지연 추가
+             });
+   
+       function closePopup() {
+          var popup = document.getElementById("popup");
+          var overlay = document.querySelector(".overlay");
+          var body = document.body;
+   
+          // 서서히 사라지는 애니메이션 적용
+          popup.style.opacity = "0";
+   
+          // 애니메이션 시간만큼의 지연 추가
+          setTimeout(function() {
+             popup.style.display = "none";
+             overlay.style.display = "none";
+             body.classList.remove("blur");
+             body.style.overflow = "";
+          }, 300);
+       }
+       // modal 온클릭 
+       function detailMenu(name, price, desc, soldout,img){
+          //${m.menus_name}, ${m.menu_price },${m.menu_desc}, ${m.menu_soldout } ${m.menu_img }
+          console.log(name);
+          console.log(price);
+          console.log(desc);
+          console.log(soldout);
+          console.log(img);
+          
+          
+       }
+    </script>
 </body>
 </html>
