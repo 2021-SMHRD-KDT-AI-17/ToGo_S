@@ -4,4 +4,15 @@
 	<select id="getMenuList" parameterType="String" resultType="kr.smhrd.entity.Menus">
 		select * from menus where store_id = #{store_id}
 	</select>
+	
+	<update id="updateMenu" parameterType="kr.smhrd.entity.Menus">
+		update menus 
+		set menu_name = #{menu_name}, menu_price = #{menu_price}, menu_desc = #{menu_desc}, menu_img=#{menu_img}, menu_soldout = #{menu_soldout}
+		where menu_idx = #{menu_idx}
+	</update>
+	
+	<insert id="insertMenu" parameterType="kr.smhrd.entity.Menus" >
+		insert into menus (store_id, menu_name, menu_price, menu_desc,menu_img) 
+		values(#{store_id}, #{menu_name},#{menu_price},#{menu_img});
+	</insert>
 </mapper>

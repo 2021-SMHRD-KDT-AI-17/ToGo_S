@@ -137,7 +137,7 @@ https://www.tooplate.com/view/2123-simply-amazed
 
 							<c:forEach items="${m_list}" var="m" varStatus="status">
 								<tr data-bs-toggle="modal" data-bs-target="#exampleModal"
-									onclick="detailMenu('${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')">
+									onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')">
 									<td>${status.count }</td>
 									<td>${m.menu_name}</td>
 									<td>${m.menu_price}</td>
@@ -148,7 +148,7 @@ https://www.tooplate.com/view/2123-simply-amazed
 
 					</div>
 					<div class="mx-auto gallery-slider">
-						<button>추가하기</button>
+						<button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addmenu()">추가하기</button>
 
 					</div>
 				</div>
@@ -206,6 +206,7 @@ https://www.tooplate.com/view/2123-simply-amazed
 							class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 							<div class="modal-content">
 								<form action="updateMenu" method= "post">
+								<input type = "hidden" name = "menu_idx" id="menu_idx">
 									<div class="modal-header">
 										<h1 class="modal-title fs-5" id="exampleModalLabel">메뉴 상세</h1>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -335,7 +336,7 @@ https://www.tooplate.com/view/2123-simply-amazed
           }, 300);
        }
        // modal 온클릭 
-       function detailMenu(name, price, desc, soldout,img){
+       function detailMenu(idx,name, price, desc, soldout,img){
 
           // menuName 메뉴 이름
           document.getElementById("menu_name").setAttribute("value", name);
@@ -347,7 +348,8 @@ https://www.tooplate.com/view/2123-simply-amazed
           
           // 메뉴 설명
           document.getElementById("menu_desc").setAttribute("value", desc);
- 		
+          
+          document.getElementById("menu_idx").setAttribute("value", idx);
           // soldout 아직 안함
 
        }
@@ -359,6 +361,20 @@ https://www.tooplate.com/view/2123-simply-amazed
     	        checkbox.value = "n";
     	    }
     	}
+       
+       function addmenu(){
+    	   document.getElementById("menu_name").setAttribute("value","" );
+           // menuPrice 메뉴 가격
+           document.getElementById("menu_price").setAttribute("value","");
+           
+           //menuImg 메뉴 이미지
+           document.getElementById("menu_img").setAttribute("value","" );
+           
+           // 메뉴 설명
+           document.getElementById("menu_desc").setAttribute("value","");
+           
+           document.getElementById("menu_idx").setAttribute("value","");
+       }
     </script>
 </body>
 </html>
