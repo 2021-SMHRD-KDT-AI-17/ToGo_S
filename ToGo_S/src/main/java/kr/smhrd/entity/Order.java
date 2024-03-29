@@ -22,4 +22,5 @@ public class Order {
    private String store_id;      // 업체 아이디
    private int pick_up_time;      // 픽업 시간
    
+   
 }
