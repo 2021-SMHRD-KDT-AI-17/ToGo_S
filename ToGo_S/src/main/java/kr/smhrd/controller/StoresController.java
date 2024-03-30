@@ -52,20 +52,33 @@ public class StoresController {
 		
 		Stores loginStore = (Stores) session.getAttribute("loginStore");
 		System.out.println(menu.getMenu_idx());
-		if (menu.getMenu_idx()>=0) {
 			if(menu.getMenu_soldout() == null) {
 				menu.setMenu_soldout("n");
 			}else {
 				menu.setMenu_soldout("y");
 			}
 			menusMapper.updateMenu(menu);
-		}else {
-			menu.setStore_id(loginStore.getStore_id());
-			menusMapper.insertMenu(menu);
-		}
 		
 		List<Menu> m_list = menusMapper.getMenuList(loginStore.getStore_id());
 		session.setAttribute("m_list", m_list);
+		return "redirect:/goMenu";
+	}
+	
+	@RequestMapping("/addMenu")
+	public String AddMenu( Menus menu, HttpSession session) {
+		
+		
+		Stores loginStore = (Stores) session.getAttribute("loginStore");
+		System.out.println(menu.getMenu_idx());
+//			if(menu.getMenu_soldout() == null) {
+//				menu.setMenu_soldout("n");
+//			}else {
+//				menu.setMenu_soldout("y");
+//			}
+//			menusMapper.insertMenu(menu);
+//		
+//		List<Menu> m_list = menusMapper.getMenuList(loginStore.getStore_id());
+//		session.setAttribute("m_list", m_list);
 		return "redirect:/goMenu";
 	}
 	

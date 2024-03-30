@@ -12,7 +12,7 @@
 	</update>
 	
 	<insert id="insertMenu" parameterType="kr.smhrd.entity.Menus" >
-		insert into menus (store_id, menu_name, menu_price, menu_desc,menu_img) 
-		values(#{store_id}, #{menu_name},#{menu_price},#{menu_img});
+		insert into menus (store_id, menu_name, menu_price, menu_desc,menu_img, menu_soldout) 
+		values(#{store_id}, #{menu_name},#{menu_price},#{menu_desc},#{menu_img},#{menu_soldout});
 	</insert>
 </mapper>

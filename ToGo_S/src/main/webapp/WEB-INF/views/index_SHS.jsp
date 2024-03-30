@@ -148,7 +148,7 @@ https://www.tooplate.com/view/2123-simply-amazed
 
 					</div>
 					<div class="mx-auto gallery-slider">
-						<button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addmenu()">추가하기</button>
+						<button data-bs-toggle="modal" data-bs-target="#exampleModal1" onclick="addmenu()">추가하기</button>
 
 					</div>
 				</div>
@@ -257,7 +257,73 @@ https://www.tooplate.com/view/2123-simply-amazed
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-bs-dismiss="modal">닫기</button>
-										<input type="submit" class="btn btn-primary" value="수정하기">
+										<input type="submit" class="btn btn-primary" value="수정하기" id = "btn">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="modal fade" id="exampleModal1" tabindex="-1"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div
+							class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+							<div class="modal-content">
+								<form action="addMenu" method= "post">
+								<input type = "hidden" name = "menu_idx" id="menu_idx">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="exampleModalLabel">메뉴 상세</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="menu-modal-box modal-body">
+										<div class="menu-modal-box-wrap" style="display: flex; justify-content: space-between; padding: 10px; box-sizing: border-box;">
+
+											<div class="menu-img" style="height: 200px; width: 150px; background: #999;">
+												<p name="product">
+													<input id="menu_img" type="file" name = "menu_img">
+												</p>
+
+
+											</div>
+											<div class="menu-detail"
+												style="height: 200px; width: 300px; background: #777;">
+												<article>
+													<p name="product">
+														메뉴 이름 <input type="text" id="menu_name"name = "menu_name">
+													</p>
+
+													<p>
+														메뉴 가격<input type="text" placeholder="메뉴가격" id="menu_price" name = "menu_price">원
+													</p>
+												</article>
+
+												<section class="menu-count"
+													style="background: #555; height: 35px; width: 100%; display: flex;">
+													<div class="menu-count-left"
+														style="margin-left: 15px; margin-right: 15px;">
+														<div class="form-check form-switch">
+															<span>판매여부</span> 
+															<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" name="menu_soldout" onchange="toggleValue(this)">
+															<label class="form-check-label" for="flexSwitchCheckChecked">매진</label>
+														</div>
+													</div>
+												</section>
+											</div>
+										</div>
+									</div>
+									<div class="desc">SSS
+										<div style="height: 80px; width: 100%;">
+											<p>메뉴 설명</p>
+											<textarea style="width: 100%; height: 100%;"
+												class="desc-text-box" id="menu_desc" name = "menu_desc"></textarea>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-bs-dismiss="modal">닫기</button>
+										<input type="submit" class="btn btn-primary" value="추가하기">
 									</div>
 								</form>
 							</div>
@@ -369,11 +435,11 @@ https://www.tooplate.com/view/2123-simply-amazed
            
            //menuImg 메뉴 이미지
            document.getElementById("menu_img").setAttribute("value","" );
-           
+           SS
            // 메뉴 설명
            document.getElementById("menu_desc").setAttribute("value","");
+           document.getElementById("menu_idx").setAttribute("value","0");
            
-           document.getElementById("menu_idx").setAttribute("value","");
        }
     </script>
 </body>
