@@ -27,7 +27,9 @@ https://www.tooplate.com/view/2123-simply-amazed
         <header class="header order-last" id="tm-header">
             <nav class="navbar">
                 <div class="collapse navbar-collapse single-page-nav">
+                <form action="adminLogout">
                    <button>로그아웃</button>
+                </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#section-1"><span class="icn"><i class="fas fa-2x fa-air-freshener"></i></span> 주문관리</a>
@@ -62,6 +64,11 @@ https://www.tooplate.com/view/2123-simply-amazed
                     <div class="item">
                         <div class="item1">
                         <h3 class="h33">주문관리</h3>
+                        
+                        <form action="orderDo">
+                        	<button>주문관리</button>
+                        
+                        </form>
                             <div class="tm1">
                             
                             <div class="item2">

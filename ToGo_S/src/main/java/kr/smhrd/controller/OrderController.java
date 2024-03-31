@@ -24,9 +24,14 @@ public class OrderController {
 		return "orderToday";
 	}
 	
-	@RequestMapping("/goOrder")
-	public String goOrder() {
-		
+//	@RequestMapping("/goOrder")
+//	public String goOrder() {
+//		
+//		return "StoresOrder";
+//	}
+	
+	@RequestMapping("orderDo")
+	public String orderDo() {
 		return "StoresOrder";
 	}
 }
