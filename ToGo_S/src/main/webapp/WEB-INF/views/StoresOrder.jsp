@@ -6,7 +6,7 @@
     
 <!DOCTYPE html>
 <html>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
@@ -39,7 +39,7 @@
             <ul>
             	<c:forEach items="${order_list}" var="ol" varStatus="status">
     				<li>
-        				<p>주문번호<span>${ol.order_idx}</span>번</p>
+        				<p class="order-number" data-order-id="${ol.order_idx}" onclick="orderDetailClick()">주문번호<span>${ol.order_idx}</span>번</p>
         				<p>주문 금액: <span>${ol.order_total_amount}</span>원</p>
    					 </li>
 				</c:forEach>				
@@ -94,7 +94,46 @@
             alert("완료되었습니다!");
         }
 
+        
+       
+            function orderDetailClick() {
+                $.ajax({
+                    url: "order_Detail_Select", // 서버의 엔드포인트 주소
+                    method: "GET",
+                    success: function(res) {
+                        // 서버에서 받아온 데이터를 사용하여 주문 상세 내역을 추가
+                       console.log(res);
+                        
+                        
+                        
+                        
+                        
+                        
+                    },
+                    error: function() {
+                        console.error("실패");
+                    }
+                });
+            }
+
+            // 주문 상세 내역을 추가하는 함수
+            function addOrderDetail(menuName, quantity, requirements) {
+                var detailDiv = document.createElement("div");
+                detailDiv.innerHTML = `
+                    <p>메뉴명: <span>${menuName}</span></p>
+                    <p>갯수: <span>${quantity}</span>개</p>
+                    <p>요구사항: <span>${requirements}</span></p>
+                    <br>
+                `;
+                document.querySelector(".div2_tag > div:nth-child(2)").appendChild(detailDiv);
+            }
+
+            // 페이지 로드 시 주문 상세 내역을 비동기로 추가
+            addOrderDetailFromServer();
+        
     </script>
+    
+    <script src="resources/assets/js/vender/jquery-2.2.4.min.js"></script>
 </body>
 
 </html>
