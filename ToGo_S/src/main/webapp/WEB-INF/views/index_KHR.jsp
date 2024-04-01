@@ -100,6 +100,8 @@
                             <a href="goOrderYesterday"><button class="btn-1">어제 매출 확인</button></a> 
                        
                             <a href="goOrderMonth"><button class="btn-1">월간 매출 확인</button></a>
+                            </div>
+                            </div>
                             <style>
         
     </main>

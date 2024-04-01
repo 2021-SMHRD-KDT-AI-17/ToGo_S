@@ -24,11 +24,10 @@ public class AdminController {
 		return "login";
 	}
 	
-	@RequestMapping("/order_Detail_Select")
-	public String orderDetailSelect() {
-//		adminMapper.orderDetailSelect(order_idx);
-		
-		
-		return "123";
-	}
+//	@RequestMapping("/order_Detail_Select")
+//	public void order_Detail_Select() {
+////		adminMapper.orderDetailSelect(order_idx);
+//		System.out.println("왜 안되는거지?");
+//		
+//	}
 }

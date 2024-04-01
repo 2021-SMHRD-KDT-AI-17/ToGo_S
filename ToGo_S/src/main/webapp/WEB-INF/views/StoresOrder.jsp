@@ -6,8 +6,7 @@
 
 <!DOCTYPE html>
 <html>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="resources/assets/jquery-2.2.4.min.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -41,7 +40,7 @@
 				<c:forEach items="${order_list}" var="ol" varStatus="status">
 					<li>
 						<p class="order-number" data-order-id="${ol.order_idx}"
-							onclick="orderDetailClick()">
+							onclick="orderDetailClick(${ol.order_idx})">
 							주문번호<span>${ol.order_idx}</span>번
 						</p>
 						<p>
@@ -58,54 +57,11 @@
 			<!-- order 내용-->
 			<div>
 				<p>
-					주문번호 <span>000</span>번
-				</p>
-				<p>
-					메뉴<span>0</span>개
-				</p>
-				<p>
-					<span>0,000</span>원
+					주문번호 <span id="id_order_idx"></span>번
 				</p>
 			</div>
 			<!-- order detail 내용  반복 예정 -->
-			<div>
-
-				<div>
-					<p>
-						메뉴명: <span>소떡소떡</span>
-					</p>
-					<p>
-						갯수: <span>0</span>개
-					</p>
-					<p>
-						요구사항: <span>000해주세요</span>
-					</p>
-					<br>
-				</div>
-				<div>
-					<p>
-						메뉴명: <span>소떡소떡</span>
-					</p>
-					<p>
-						갯수: <span>0</span>개
-					</p>
-					<p>
-						요구사항: <span>000해주세요</span>
-					</p>
-					<br>
-				</div>
-				<div>
-					<p>
-						메뉴명: <span>소떡소떡</span>
-					</p>
-					<p>
-						갯수: <span>0</span>개
-					</p>
-					<p>
-						요구사항: <span>000해주세요</span>
-					</p>
-					<br>
-				</div>
+			<div id="detail">
 
 			</div>
 			<div>
@@ -119,42 +75,98 @@
 	</div>
 
 	<button onclick="showAlert()">조리완료</button>
-	<script type="text/javascript">
-		function showAlert() {
-			alert("완료되었습니다!");
-		}
-
-		function orderDetailClick() {
-			$.ajax({
-				url : "order_Detail_Select", // 서버의 엔드포인트 주소
-				success : function(res) {
-					// 서버에서 받아온 데이터를 사용하여 주문 상세 내역을 추가
-					alert("완료")
-
-				},
-				error : function() {
-					console.log("실패");
-				}
-			});
-		}
-
-		/*             // 주문 상세 내역을 추가하는 함수
-		 function addOrderDetail(menuName, quantity, requirements) {
-		 var detailDiv = document.createElement("div");
-		 detailDiv.innerHTML = `
-		 <p>메뉴명: <span>${menuName}</span></p>
-		 <p>갯수: <span>${quantity}</span>개</p>
-		 <p>요구사항: <span>${requirements}</span></p>
-		 <br>
-		 `;
-		 document.querySelector(".div2_tag > div:nth-child(2)").appendChild(detailDiv);
-		 } 
-
-		 // 페이지 로드 시 주문 상세 내역을 비동기로 추가
-		 addOrderDetailFromServer();*/
-	</script>
-
-
 </body>
+
+<script type="text/javascript">
+	function showAlert() {
+		alert("완료되었습니다!");
+	}
+
+	function orderDetailClick(order_idx) {
+	    $.ajax({
+	        url: "order_Detail_Select",
+	        method: "POST",
+	        data: { order_idx: order_idx },
+	        success: function(response) {
+	            console.log("성공");
+	            // 서버로부터 받은 데이터 처리
+	            document.getElementById("id_order_idx").innerText = order_idx;
+	            // response의 각 항목에 대해 createMenu 호출
+	            response.forEach(function(menu) {
+	                createMenu(menu);
+	            });
+	        },
+	        error: function() {
+	            console.log("실패");
+	        }
+	    });
+	}
+
+	
+	function createMenu(menu) {
+	    console.log("함수임")
+	    console.log(menu);
+	    var detailDiv = document.getElementById('detail');
+	    detailDiv.innerHTML = ""; // 기존 내용 초기화
+	    // 새로운 div 요소 생성
+	    var div = document.createElement('div');
+	    
+	    let menu_name = orderDetailMenu(menu.menu_idx);
+	    console.log("받아온 메뉴 이름 " + menu_name);
+
+	    // p 요소 생성 및 내용 설정
+	    var menuName = document.createElement('p');
+	    menuName.innerText = '메뉴명: ';
+	    var menuNameSpan = document.createElement('span');
+	    menuNameSpan.innerText = menu_name;
+	    menuName.appendChild(menuNameSpan);
+
+	    var menuCount = document.createElement('p');
+	    menuCount.innerText = '갯수: ';
+	    var menuCountSpan = document.createElement('span');
+	    menuCountSpan.innerText = menu.order_cnt; // 수정된 부분
+	    menuCount.appendChild(menuCountSpan);
+
+	    var menuRequirement = document.createElement('p');
+	    menuRequirement.innerText = '요구사항: ';
+	    var menuRequirementSpan = document.createElement('span');
+	    menuRequirementSpan.innerText = menu.order_request;
+	    menuRequirement.appendChild(menuRequirementSpan);
+
+	    // div에 p 요소들 추가
+	    div.appendChild(menuName);
+	    div.appendChild(menuCount);
+	    div.appendChild(menuRequirement);
+
+	    // 빈 줄 추가
+	    var lineBreak = document.createElement('br');
+	    div.appendChild(lineBreak);
+
+	    // 생성된 div를 detail이라는 id를 가진 div에 추가
+	    detailDiv.appendChild(div);
+	}
+	
+	function orderDetailMenu(menu_idx) {
+	    let menu_name;
+	    $.ajax({
+	        url: "getMenu",
+	        method: "POST",
+	        data: { menu_idx: menu_idx },
+	        success: function(menu) {
+	            console.log("메뉴 정보 가져오기 성공");
+	            console.log(menu); // 받은 메뉴 정보를 콘솔에 출력
+	            // 받은 메뉴 정보를 활용하여 필요한 작업을 수행할 수 있습니다.
+	            menu_name = menu.menu_name;
+	            console.log(menu_name);
+
+	        },
+	        error: function() {
+	            console.log("메뉴 정보 가져오기 실패");
+	        }
+	    });
+	}
+
+
+</script>
 
 </html>
