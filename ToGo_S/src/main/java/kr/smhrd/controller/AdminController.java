@@ -25,9 +25,10 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/order_Detail_Select")
-	public Order_details orderDetailSelect(@RequestParam("order_idx") int order_idx) {
-		adminMapper.orderDetailSelect(order_idx);
+	public String orderDetailSelect() {
+//		adminMapper.orderDetailSelect(order_idx);
 		
-		return "";
+		
+		return "123";
 	}
 }
