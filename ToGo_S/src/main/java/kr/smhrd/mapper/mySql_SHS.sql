@@ -10,7 +10,7 @@ create table s_member(
 INSERT INTO s_member VALUES ('123', '123', '간식');
 
 --판매자 조회
-select * from s_member;
+select * from stores;
 
 -- 소비자 member
 create table c_member(

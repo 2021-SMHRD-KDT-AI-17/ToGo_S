@@ -34,4 +34,10 @@ public class OrderController {
 	public String orderDo() {
 		return "StoresOrder";
 	}
+	
+	@RequestMapping("/gosoldout")
+	public String gosoldout() {
+		
+		return "soldout";
+	}
 }
