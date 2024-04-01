@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.smhrd.entity.Menus;
+import kr.smhrd.entity.Order;
+
 import kr.smhrd.entity.Stores;
+import kr.smhrd.mapper.AdminMapper;
 import kr.smhrd.mapper.MenusMapper;
 import kr.smhrd.mapper.StoresMapper;
 
@@ -24,6 +27,9 @@ public class StoresController {
 	@Autowired
 	private MenusMapper menusMapper;
 	
+	@Autowired
+	private AdminMapper adminMapper;
+	
 	@RequestMapping("/storeLogin")
 	public String storeLogin(Stores store, HttpSession session) {
 		Stores loginStore = storeMapper.storeLogin(store);
@@ -33,6 +39,11 @@ public class StoresController {
 			
 			List<Menu> m_list = menusMapper.getMenuList(loginStore.getStore_id());
 			session.setAttribute("m_list", m_list);
+			
+			List<Order> order_list = adminMapper.orderList();
+			session.setAttribute("order_list", order_list);
+			System.out.println(order_list.toString());
+			
 			return "index";
 		}else {
 			return "login";
@@ -42,9 +53,11 @@ public class StoresController {
 	
 	
 	@RequestMapping("/goMenu")
-	public String goMenu() {
+	public String goMenu(HttpSession session) {
 		
-		
+		List<Order> order_list = adminMapper.orderList();
+		session.setAttribute("order_list", order_list);
+		System.out.println(order_list.toString());
 		return "index";
 	}
 	

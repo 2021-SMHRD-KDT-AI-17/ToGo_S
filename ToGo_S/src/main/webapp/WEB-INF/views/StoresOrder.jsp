@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="kr.smhrd.entity.Order" %>    
+<%@ page import="java.util.List" %>  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 
@@ -33,18 +37,12 @@
         <div class="div_tag">
             <!-- 내용을 여기에 추가할 수 있습니다. -->
             <ul>
-                <li>
-                    <p>주문번호<span>000</span>번</p>
-                    <p>주문 금액: <span>000</span>원</p>
-                </li>
-                <li>
-                    <p>주문번호<span>001</span>번</p>
-                    <p>주문 금액</p>
-                </li>
-                <li>
-                    <p>주문번호<span>002</span>번</p>
-                    <p>주문 금액</p>
-                </li>
+            	<c:forEach items="${order_list}" var="ol" varStatus="status">
+    				<li>
+        				<p>주문번호<span>${ol.order_idx}</span>번</p>
+        				<p>주문 금액: <span>${ol.order_total_amount}</span>원</p>
+   					 </li>
+				</c:forEach>				
             </ul>
         </div>
         

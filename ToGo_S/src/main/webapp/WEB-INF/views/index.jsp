@@ -67,7 +67,6 @@ https://www.tooplate.com/view/2123-simply-amazed
                         
                         <form action="orderDo">
                         	<button>주문관리</button>
-                        
                         </form>
                             <div class="tm1">
                             
@@ -192,7 +191,6 @@ https://www.tooplate.com/view/2123-simply-amazed
 								</tr>
 							</c:forEach>
 						</table>
-
 					</div>
 					<div class="mx-auto gallery-slider">
 						<button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addmenu()">추가하기</button>
