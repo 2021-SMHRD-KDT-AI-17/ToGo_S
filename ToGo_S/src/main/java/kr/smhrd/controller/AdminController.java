@@ -28,6 +28,6 @@ public class AdminController {
 	public Order_details orderDetailSelect(@RequestParam("order_idx") int order_idx) {
 		adminMapper.orderDetailSelect(order_idx);
 		
-		return "";
+		return "임시값";
 	}
 }

@@ -39,7 +39,8 @@
             <ul>
             	<c:forEach items="${order_list}" var="ol" varStatus="status">
     				<li>
-        				<p class="order-number" data-order-id="${ol.order_idx}" onclick="orderDetailClick()">주문번호<span>${ol.order_idx}</span>번</p>
+        				<p class="order-number" data-order-id="${ol.order_idx}" onclick="orderDetailClick()">주문번호
+        				<span>${ol.order_idx}</span>번</p>
         				<p>주문 금액: <span>${ol.order_total_amount}</span>원</p>
    					 </li>
 				</c:forEach>				
