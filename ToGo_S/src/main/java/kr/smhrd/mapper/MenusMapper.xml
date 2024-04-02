@@ -15,4 +15,11 @@
 		insert into menus (store_id, menu_name, menu_price, menu_desc,menu_img, menu_soldout) 
 		values(#{store_id}, #{menu_name},#{menu_price},#{menu_desc},#{menu_img},#{menu_soldout});
 	</insert>
+	
+	<update id="updateSoldout" parameterType="kr.smhrd.entity.Menus">
+		update menus 
+		set menu_soldout = #{menuSoldout}
+		where menu_name = #{menuName}
+	</update>
+	
 </mapper>

@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <script src="resources/assets/jquery-2.2.4.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -28,7 +29,7 @@ body {
 	background-color: #fff;
 	border: 1px solid #ddd;
 	border-radius: 10px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 /* 탭과 컨테이너 스타일 */
@@ -151,16 +152,20 @@ button:hover {
 <body>
 	<div class="tabs">
 		<div class="tab" onclick="openTab(1)" id="tab1">
-		<a href="goStoreOrder">주문관리</a></div>
-		
+			<a href="goStoreOrder">주문관리</a>
+		</div>
+
 		<div class="tab" onclick="openTab(2)" id="tab2">
-		<a href="goReservation">예약관리</a></div>
-		
+			<a href="goReservation">예약관리</a>
+		</div>
+
 		<div class="tab" onclick="openTab(3)" id="tab3">
-		<a href="goConMenu">메뉴관리</a></div>
-			
+			<a href="goConMenu">메뉴관리</a>
+		</div>
+
 		<div class="tab" onclick="openTab(4)" id="tab4">
-		<a href="goMoney">매출관리</a></div>
+			<a href="goMoney">매출관리</a>
+		</div>
 	</div>
 
 	<div class="content-container">
@@ -168,19 +173,7 @@ button:hover {
 
 		<div id="leftContent" class="left-content">
 			<div id="items">
-				<ul>
-					<c:forEach items="${order_list}" var="ol" varStatus="status">
-						<li onclick="orderDetailClick(${ol.order_idx})">
-							<div>
-								<p class="order-number" data-order-id="${ol.order_idx}"></p>
-							</div> 주문번호 &nbsp;<span>${ol.order_idx}</span>번
-							</p>
-							<p>
-								주문 금액: <span>${ol.order_total_amount}</span>원
-							</p>
-
-						</li>
-					</c:forEach>
+				<ul id="object">
 				</ul>
 			</div>
 		</div>
@@ -201,7 +194,7 @@ button:hover {
 						<p>
 							<span>000</span>분 후 픽업
 						</p>
-						<button>준비 완료</button>
+						<button onclick="removeElement()">준비 완료</button>
 					</div>
 				</div>
 			</div>
@@ -209,9 +202,83 @@ button:hover {
 </body>
 
 <script type="text/javascript">
-	function showAlert() {
-		alert("완료되었습니다!");
-	}
+function removeElement(elementId) {
+	let order_idx = document.getElementById("id_order_idx").innerText;
+    var element = document.getElementById("orderIdx_"+order_idx);
+    if (element && element.parentNode) {
+        element.parentNode.removeChild(element); // 부모 노드에서 해당 요소를 제거합니다.
+    }
+    $.ajax({
+    	url:"comOrder",
+    	success: function(){},
+    	error: function(){}
+    })
+}
+	
+	// 파이어베이스
+	const firebaseConfig = {
+            apiKey: "AIzaSyDEWh-0Au3One8fsVTYatJyCaGCs8vmbj4",
+            authDomain: "webtest-a87c0.firebaseapp.com",
+            databaseURL: "https://webtest-a87c0-default-rtdb.firebaseio.com/",
+            projectId: "webtest-a87c0",
+            storageBucket: "webtest-a87c0.appspot.com",
+            messagingSenderId: "976815392508",
+            appId: "1:976815392508:web:c5cba683cfc72a0c167979",
+            measurementId: "G-8ZR2Z98ZS5"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var preObject = document.getElementById("object");
+        var dbRef = firebase.database().ref().child("object");
+        dbRef.on('value', function(snapshot) {
+            // 주문 정보 데이터 가져오기
+            var orderData = snapshot.val();
+            
+            // 주문 정보가 있는 경우에만 HTML 요소를 생성하고 추가
+            if (orderData) {
+                var orderId = orderData.order_idx;
+                var orderAmount = orderData.total_price;
+
+                // 주문 정보를 기반으로 li 요소 생성
+                var orderListItem = createOrderListItem(orderId, orderAmount);
+
+                // "object" id를 가진 ul 태그에 추가
+                var ulElement = document.getElementById("object");
+                ulElement.appendChild(orderListItem);
+            }
+        })
+        
+function createOrderListItem(orderId, orderAmount) {
+    var liElement = document.createElement("li");
+    liElement.setAttribute("onclick", "orderDetailClick(" + orderId + ")");
+    
+    var divElement = document.createElement("div");
+    liElement.id = "orderIdx_"+orderId; // 원하는 id 값을 넣으세요
+    
+    var pElement = document.createElement("p");
+    pElement.classList.add("order-number");
+    pElement.dataset.orderId = orderId;
+    divElement.appendChild(pElement);
+    
+    var spanElement1 = document.createElement("span");
+    spanElement1.textContent = "주문번호";
+    var spanElement2 = document.createElement("span");
+    spanElement2.textContent = orderId + "번";
+    pElement.appendChild(spanElement1);
+    pElement.appendChild(document.createTextNode("\u00A0")); // 공백
+    pElement.appendChild(spanElement2);
+    
+    var pElement2 = document.createElement("p");
+    pElement2.style.margin = "0px";
+    pElement2.innerHTML = "주문 금액: <span>" + orderAmount + "</span>원";
+
+    liElement.appendChild(divElement);
+    liElement.appendChild(pElement2);
+
+    return liElement;
+}
+        
+        
 
 	function orderDetailMenu(menu_idx, callback) {
 	    $.ajax({

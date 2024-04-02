@@ -53,3 +53,11 @@ CREATE TABLE stores
 
 INSERT INTO stores (store_id, store_pw, store_name, store_bno, store_tel, joined_at, service_idx, store_leave) VALUES ('admin', '123', '휴게소', '409-00-00000', '010-4062-9993', NOW(), 1, '0');
 select * from stores where store_id ='admin' and store_pw = '123' and store_leave=0;
+
+select * from menus;
+
+
+
+		update menus 
+		set menu_soldout = 'n'
+		where menu_name = '핫도그';
