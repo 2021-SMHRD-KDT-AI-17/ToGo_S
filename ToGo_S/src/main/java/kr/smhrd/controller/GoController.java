@@ -72,4 +72,19 @@ public class GoController {
 	public String goMoney() {
 		return"Money";
 	}
+	
+	@RequestMapping("/goReservation")
+	public String goReservation() {
+		return "reservation";
+	}
+	
+	@RequestMapping("/goStoreOrder")
+	public String goStoreOrder() {
+		return "StoresOrder";
+	}
+	
+	@RequestMapping("/logout")
+	public String logout() {
+		return "login";
+	}
 }
