@@ -52,9 +52,11 @@ public class RestController {
 	public String updateSoldout(@RequestParam("menuName") String menuName, 
 	                            @RequestParam("menuSoldout") String menuSoldout) {
 	    try {
+	    	System.out.println("실행1");
 	        // 해당 메뉴의 품절 여부를 업데이트하는 메서드 호출
 	        menusMapper.updateSoldout(menuName, menuSoldout);
 	    } catch (Exception e) {
+	    	System.out.println("실행2");
 	        e.printStackTrace();
 	        return "error"; // 에러 발생 시 에러 페이지로 이동
 	    }
