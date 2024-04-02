@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 
 import kr.smhrd.entity.Menus;
 
@@ -20,6 +22,8 @@ public interface MenusMapper {
 	void updateMenu(Menus menu);
 	
 	void insertMenu(Menus menu);
+	
+	
 	
 	 
     }

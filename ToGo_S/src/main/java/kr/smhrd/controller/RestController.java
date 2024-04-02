@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.smhrd.entity.Menus;
 import kr.smhrd.entity.Order_details;
 import kr.smhrd.mapper.AdminMapper;
+import kr.smhrd.mapper.MenusMapper;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -29,7 +31,7 @@ public class RestController {
 	    return order_details;
 	}
 	
-	
+	//주문번호 클릭하면 상세주문 정보 알려주기	
 	@RequestMapping("/getMenu")
 	@ResponseBody
 	public Menus getMenu(int menu_idx) {
@@ -39,5 +41,16 @@ public class RestController {
 	}
 
 
-	//주문번호 클릭하면 상세주문 정보 알려주기
+
+
+	  // 매진여부확인
+	  
+//	  @RequestMapping("/updateSoldout")
+//	   public String updateSoldout(@RequestParam("soldout-checkbox") String soldoutcheckbox) {
+//	  
+//		  Menus members = MenusMapper.updateSoldout(soldoutcheckbox);
+//		  return "";
+//	  }
+	
+	
 }
