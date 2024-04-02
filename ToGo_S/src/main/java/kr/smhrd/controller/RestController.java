@@ -48,7 +48,7 @@ public class RestController {
 
 
 	  // 매진여부확인
-	@PostMapping("/updateSoldout")
+	@RequestMapping("/updateSoldout")
 	public String updateSoldout(@RequestParam("menuName") String menuName, 
 	                            @RequestParam("menuSoldout") String menuSoldout) {
 	    try {
@@ -59,6 +59,11 @@ public class RestController {
 	        return "error"; // 에러 발생 시 에러 페이지로 이동
 	    }
 	    return "redirect:/menuPage"; // 업데이트 성공 시 메뉴 페이지로 리다이렉트
+	}
+	
+	@RequestMapping("/comOrder")
+	public String comOrder() {
+		return "";
 	}
 
 	
