@@ -15,6 +15,7 @@ import kr.smhrd.entity.Menus;
 import kr.smhrd.entity.Order_details;
 import kr.smhrd.mapper.AdminMapper;
 import kr.smhrd.mapper.MenusMapper;
+import kr.smhrd.mapper.OrdersMapper;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -24,6 +25,9 @@ public class RestController {
 	
 	@Autowired
 	private MenusMapper menusMapper;
+	
+	@Autowired
+	private OrdersMapper ordersMapper;
 	
 	@RequestMapping("/order_Detail_Select")
 	@ResponseBody
@@ -62,7 +66,10 @@ public class RestController {
 	}
 	
 	@RequestMapping("/comOrder")
-	public String comOrder() {
+	public String comOrder(int order_idx) {
+		System.out.println(order_idx);
+		ordersMapper.orderUpdate(order_idx);
+		System.out.println("준비 완료");
 		return "";
 	}
 

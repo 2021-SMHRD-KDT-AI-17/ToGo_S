@@ -210,6 +210,7 @@ function removeElement(elementId) {
     }
     $.ajax({
     	url:"comOrder",
+    	data: { order_idx: order_idx },
     	success: function(){},
     	error: function(){}
     })
@@ -247,6 +248,7 @@ function removeElement(elementId) {
                 ulElement.appendChild(orderListItem);
             }
         })
+
         
 function createOrderListItem(orderId, orderAmount) {
     var liElement = document.createElement("li");
