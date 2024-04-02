@@ -11,5 +11,11 @@ public class ReservController {
 		
 		return "StoresRes";
 	}
+	@RequestMapping("/goStoresOrder")
+	public String goStoresOrder() {
+		return "StoresOrder_KHR";
+	}
+	
+	
 	
 }

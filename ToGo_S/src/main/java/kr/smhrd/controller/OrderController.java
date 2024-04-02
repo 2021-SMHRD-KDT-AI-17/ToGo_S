@@ -49,4 +49,10 @@ public class OrderController {
 		System.out.println(order_detail_list.toString());
 		return "StoresOrder";
 	}
+	
+	@RequestMapping("/gosoldout")
+	public String gosoldout() {
+		
+		return "soldout";
+	}
 }

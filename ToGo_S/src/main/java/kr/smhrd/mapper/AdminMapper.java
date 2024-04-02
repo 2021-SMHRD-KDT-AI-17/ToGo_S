@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.smhrd.entity.Menus;
 import kr.smhrd.entity.Order;
 import kr.smhrd.entity.Order_details;
 
@@ -14,6 +15,8 @@ public interface AdminMapper {
 
 	List<Order_details> detailList();
 
-	Order_details orderDetailSelect(int order_idx);
+	List<Order_details> orderDetailSelect(int order_idx);
+
+	Menus getMenu_name(int menu_idx);
 
 }

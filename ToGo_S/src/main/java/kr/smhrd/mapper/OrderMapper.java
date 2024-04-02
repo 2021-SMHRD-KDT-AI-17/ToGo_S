@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+
 
 public class OrderMapper {
 
@@ -40,5 +42,7 @@ public class OrderMapper {
         String password = "smhrd3";
         return DriverManager.getConnection(url, username, password);
     }
+    
+    
    
 }

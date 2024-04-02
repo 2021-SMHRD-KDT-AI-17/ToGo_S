@@ -3,12 +3,16 @@
 <mapper namespace="kr.smhrd.mapper.AdminMapper">
 
 	<select id="orderList" resultType="kr.smhrd.entity.Order">
-		select * from orders
+		select * from orders where store_id = "admin" LIMIT 5
 	</select>
+    
 
-
-	<select id="detailList" resultType="kr.smhrd.entity.Order_details">
-		select * from order_details
+	<select id="orderDetailSelect" parameterType="int" resultType="kr.smhrd.entity.Order_details">
+		select * from order_details where order_idx = #{order_idx}
+	</select>
+	
+	<select id="getMenu_name" parameterType="int" resultType="kr.smhrd.entity.Menus">
+		select * from menus where menu_idx = #{menu_idx}
 	</select>
 	
 	

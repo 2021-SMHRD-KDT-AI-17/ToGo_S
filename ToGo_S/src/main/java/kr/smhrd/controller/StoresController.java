@@ -30,26 +30,7 @@ public class StoresController {
 	@Autowired
 	private AdminMapper adminMapper;
 	
-	@RequestMapping("/storeLogin")
-	public String storeLogin(Stores store, HttpSession session) {
-		Stores loginStore = storeMapper.storeLogin(store);
-		session.setAttribute("loginStore", loginStore);
-		if ((loginStore !=null ) && (loginStore.getStore_leave().equals("N"))) {
-			
-			
-			List<Menu> m_list = menusMapper.getMenuList(loginStore.getStore_id());
-			session.setAttribute("m_list", m_list);
-			
-			List<Order> order_list = adminMapper.orderList();
-			session.setAttribute("order_list", order_list);
-			System.out.println(order_list.toString());
-			
-			return "index";
-		}else {
-			return "login";
-		}
-		
-	}
+
 	
 	
 	@RequestMapping("/goMenu")

@@ -24,10 +24,19 @@ public class AdminController {
 		return "login";
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping("/order_Detail_Select")
 	public Order_details orderDetailSelect(@RequestParam("order_idx") int order_idx) {
 		adminMapper.orderDetailSelect(order_idx);
 		
 		return "임시값";
 	}
+=======
+//	@RequestMapping("/order_Detail_Select")
+//	public void order_Detail_Select() {
+////		adminMapper.orderDetailSelect(order_idx);
+//		System.out.println("왜 안되는거지?");
+//		
+//	}
+>>>>>>> branch 'main' of https://github.com/2021-SMHRD-KDT-AI-17/ToGo_S.git
 }
