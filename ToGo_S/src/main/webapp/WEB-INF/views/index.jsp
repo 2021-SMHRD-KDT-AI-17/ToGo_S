@@ -41,7 +41,7 @@ https://www.tooplate.com/view/2123-simply-amazed
          <div class="container">
             <h1>환영합니다 ___ 님</h1>
             <div>
-               <a href="goStoresOrder"><button class="btn-1">주문관리</button></a> <a
+               <a href="goOrderCon"><button class="btn-1">주문관리</button></a> <a
                   href="#"><button class="btn-1">주문완료</button></a><br>  <a
                   href="#section-3"><button class="btn-1">메뉴관리</button></a> <a
                   href="#section-4"><button class="btn-1">매출관리</button></a>
