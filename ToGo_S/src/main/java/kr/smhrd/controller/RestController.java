@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,6 +21,9 @@ public class RestController {
 	
 	@Autowired
 	private AdminMapper adminMapper;
+	
+	@Autowired
+	private MenusMapper menusMapper;
 	
 	@RequestMapping("/order_Detail_Select")
 	@ResponseBody
@@ -44,13 +48,18 @@ public class RestController {
 
 
 	  // 매진여부확인
-	  
-//	  @RequestMapping("/updateSoldout")
-//	   public String updateSoldout(@RequestParam("soldout-checkbox") String soldoutcheckbox) {
-//	  
-//		  Menus members = MenusMapper.updateSoldout(soldoutcheckbox);
-//		  return "";
-//	  }
-	
+	@PostMapping("/updateSoldout")
+	public String updateSoldout(@RequestParam("menuName") String menuName, 
+	                            @RequestParam("menuSoldout") String menuSoldout) {
+	    try {
+	        // 해당 메뉴의 품절 여부를 업데이트하는 메서드 호출
+	        menusMapper.updateSoldout(menuName, menuSoldout);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return "error"; // 에러 발생 시 에러 페이지로 이동
+	    }
+	    return "redirect:/menuPage"; // 업데이트 성공 시 메뉴 페이지로 리다이렉트
+	}
+
 	
 }
