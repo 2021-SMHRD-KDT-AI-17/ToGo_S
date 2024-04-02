@@ -98,6 +98,21 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+    <div class="container">
+        <!-- 주문 목록 list-->
+        <div class="div_tag">
+            <!-- 내용을 여기에 추가할 수 있습니다. -->
+            <ul>
+            	<c:forEach items="${order_list}" var="ol" varStatus="status">
+    				<li>
+        				<p class="order-number" data-order-id="${ol.order_idx}" onclick="orderDetailClick()">주문번호
+        				<span>${ol.order_idx}</span>번</p>
+        				<p>주문 금액: <span>${ol.order_total_amount}</span>원</p>
+   					 </li>
+				</c:forEach>				
+            </ul>
+=======
 	<div class="tabs">
 		<div class="tab" onclick="openTab(1)" id="tab1">Tab 1</div>
 		<div class="tab" onclick="openTab(2)" id="tab2">Tab 2</div>
@@ -126,6 +141,7 @@
 					</c:forEach>
 				</ul>
 			</div>
+>>>>>>> branch 'main' of https://github.com/2021-SMHRD-KDT-AI-17/ToGo_S.git
         </div>
         <div id="rightContent" class="right-content">
 			<div class="div_tag">
