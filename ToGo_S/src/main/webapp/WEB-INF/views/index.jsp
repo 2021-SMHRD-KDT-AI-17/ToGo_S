@@ -40,9 +40,12 @@ https://www.tooplate.com/view/2123-simply-amazed
 			data-parallax="scroll" id="section-1">
 			<div class="container">
 				<h1>환영합니다 ___ 님</h1>
+				<a href="logout" style="position: absolute; top: 10px; right: 10px;">
+    <button class="btn-2">로그아웃</button>
+</a>
 				<div>
 					<a href="goOrderCon"><button class="btn-1">주문관리</button></a> <a
-						href="#"><button class="btn-1">주문완료</button></a><br> <a
+						href="goReservation"><button class="btn-1">예약관리</button></a><br> <a
 						href="goConMenu"><button class="btn-1">메뉴관리</button></a> <a
 						href="goMoney"><button class="btn-1">매출관리</button></a>
 
@@ -93,9 +96,9 @@ https://www.tooplate.com/view/2123-simply-amazed
 	border-radius: 20px; /* 버튼 모서리 둥글게 */
 	margin-right: 100px;
 	margin-left: 100px;
-	width: 350px; /* 버튼의 너비 */
-	height: 100px; /* 버튼의 높이 */
-	font-size: 20px;
+	width: 100px; /* 버튼의 너비 */
+	height: 50px; /* 버튼의 높이 */
+	font-size: 15px;
 	font-weight: bold;
 	margin-top: 50px;
 }

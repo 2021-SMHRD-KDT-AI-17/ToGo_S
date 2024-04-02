@@ -21,7 +21,11 @@ public interface MenusMapper {
 	
 	void insertMenu(Menus menu);
 	
-	 
+	
+	
+	
+	
+	
     }
 
 	
