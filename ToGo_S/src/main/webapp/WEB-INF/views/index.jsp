@@ -1,3 +1,4 @@
+<%@page import="kr.smhrd.entity.Stores"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><!doctype html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -29,7 +30,9 @@ https://www.tooplate.com/view/2123-simply-amazed
 
 <body>
 
-
+	<% 
+	Stores loginStore = (Stores) session.getAttribute("loginStore");
+	%>
 
 
 	<!-- 헤드 끝 --------------------------------------------------------------------------------------------------------------------------------                        -->
@@ -39,7 +42,7 @@ https://www.tooplate.com/view/2123-simply-amazed
 		<div class="banner-section section parallax-window"
 			data-parallax="scroll" id="section-1">
 			<div class="container">
-				<h1>환영합니다 ___ 님</h1>
+				<h1>환영합니다!! <%=loginStore.getStore_id()%>님</h1>
 				<a href="logout" style="position: absolute; top: 10px; right: 10px;">
     <button class="btn-2">로그아웃</button>
 </a>
