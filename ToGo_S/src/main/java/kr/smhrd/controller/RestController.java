@@ -58,7 +58,7 @@ public class RestController {
 	        e.printStackTrace();
 	        return "error"; // 에러 발생 시 에러 페이지로 이동
 	    }
-	    return "redirect:/menuPage"; // 업데이트 성공 시 메뉴 페이지로 리다이렉트
+	    return "redirect:/soldout"; // 업데이트 성공 시 메뉴 페이지로 리다이렉트
 	}
 	
 	@RequestMapping("/comOrder")

@@ -269,6 +269,84 @@ td {
 th {
 	color: white;
 }
+
+.p1 {
+	color: black;
+	font-weight: bold;
+	margin-left: 25px;
+}
+
+.p2 {
+	color: #balck;
+	font-weight: bold;
+}
+
+#menu-img {
+	color: #999;
+}
+
+textarea {
+	padding: 10px; /* 내부 여백 설정 */
+	border: 1px solid #ccc; /* 테두리 스타일 설정 */
+	border-radius: 5px; /* 테두리의 모서리를 둥글게 설정 */
+	font-size: 16px; /* 폰트 크기 설정 */
+	width: 100%; /* 너비를 100%로 설정하여 부모 요소에 맞춤 */
+	box-sizing: border-box; /* 내부 여백 및 테두리 포함하여 크기 조정 */
+	transition: border-color 0.3s; /* 테두리 색상 변경에 애니메이션 적용 */
+}
+
+textarea:focus {
+	border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
+	outline: none; /* 기본 포커스 효과 제거 */
+}
+
+.custom-file-upload {
+    border: 2px solid #007bff; /* 테두리 스타일 설정 */
+    display: inline-block; /* 인라인 요소로 표시 */
+    padding: 10px 20px; /* 내부 여백 설정 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능한 상태로 표시 */
+    color: #007bff; /* 텍스트 색상 설정 */
+    background-color: #fff; /* 배경색 설정 */
+    border-radius: 5px; /* 테두리의 모서리를 둥글게 설정 */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* 배경색, 텍스트 색상, 테두리 색상 변경에 애니메이션 적용 */
+}
+
+.custom-file-upload:hover {
+    background-color: #007bff; /* 호버 시 배경색 변경 */
+    color: #fff; /* 호버 시 텍스트 색상 변경 */
+    border-color: #0056b3; /* 호버 시 테두리 색상 변경 */
+}
+
+/* 파일 선택 아이콘 */
+.custom-file-upload i {
+    margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 설정 */
+}
+
+.file-select-button{
+	position:relative;
+	left:30px;
+	bottom: 20px;
+}
+
+/* 숨겨진 파일 업로드 버튼 */
+input[type="file"] {
+    display: none; /* 파일 업로드 버튼 숨기기 */
+}
+
+.i3{
+  padding: 10px; /* 내부 여백 설정 */
+	border: 1px solid #ccc; /* 테두리 스타일 설정 */
+	border-radius: 5px; /* 테두리의 모서리를 둥글게 설정 */
+	font-size: 16px; /* 폰트 크기 설정 */
+	
+	
+	transition: border-color 0.3s; /* 테두리 색상 변경에 애니메이션 적용 */
+}
+.i3:focus{
+border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
+	outline: none; /* 기본 포커스 효과 제거 */
+}
+
 </style>
 
 
@@ -282,8 +360,8 @@ th {
 	<div class="modal fade" id="exampleModal" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div
-			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-			<div class="modal-content">
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable" stystyle="max-width: 1000px;">
+			<div class="modal-content" style="width: 100%;">
 				<form action="updateMenu" method="post">
 					<input type="hidden" name="menu_idx" id="menu_idx">
 					<div class="modal-header">
@@ -295,49 +373,54 @@ th {
 						<div class="menu-modal-box-wrap"
 							style="display: flex; justify-content: space-between; padding: 10px; box-sizing: border-box;">
 
-							<div class="menu-img"
-								style="height: 200px; width: 150px; background: #999;">
-								<p name="product">
-									<input id="menu_img" type="file" name="menu_img">
-								</p>
+							<div id="menu-img"
+								style="height: 200px; width: 200px; background: #fffff;">
+								
 
 
 							</div>
+							
 							<div class="menu-detail"
-								style="height: 200px; width: 300px; background: #777;">
+								style="height: 200px; width: 350px; background: #fffff;">
 								<article>
-									<p name="product">
-										메뉴 이름 <input type="text" id="menu_name" name="menu_name">
+									<p name="product" class="p2">
+										메뉴명<br>
+										<input type="text" class="i3" id="menu_name" name="menu_name">
 									</p>
 
-									<p>
-										메뉴 가격<input type="text" placeholder="메뉴가격" id="menu_price"
+									<p class="p2">
+										메뉴 가격 <br><input type="text" placeholder="0" class="i3"  id="menu_price"
 											name="menu_price">원
 									</p>
 								</article>
 
 								<section class="menu-count"
-									style="background: #555; height: 35px; width: 100%; display: flex;">
+									style="background: #fffff; height: 35px; width: 100%; display: flex;">
 									<div class="menu-count-left"
 										style="margin-left: 15px; margin-right: 15px;">
 										<div class="form-check form-switch">
-											<span>판매여부</span> <input class="form-check-input"
+											<span class="p2">품절여부</span> <input class="i3"
 												type="checkbox" role="switch" id="flexSwitchCheckChecked"
-												name="menu_soldout" onchange="toggleValue(this)"> <label
-												class="form-check-label" for="flexSwitchCheckChecked">매진</label>
+												name="menu_soldout" onchange="toggleValue(this)">
 										</div>
 									</div>
 								</section>
 							</div>
 						</div>
 					</div>
+					<div class="file-select-button">
+						<label for="file-upload" class="custom-file-upload"> 파일
+									선택 </label> <input id="file-upload" type="file">	
+					</div>
+					
 					<div class="desc">
 						<div style="height: 80px; width: 100%;">
-							<p>메뉴 설명</p>
-							<textarea style="width: 100%; height: 100%;"
-								class="desc-text-box" id="menu_desc" name="menu_desc"></textarea>
+							<p class="p1">메뉴 설명</p>
+							<textarea style="width: 90%; height: 50px; margin-left: 25px;"
+								class="desc-text-box" id="menu_desc" name="menu_dessc"></textarea>
 						</div>
 					</div>
+					s
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-bs-dismiss="modal">닫기</button>
@@ -347,7 +430,6 @@ th {
 			</div>
 		</div>
 	</div>
-
 	<!-- modal 창   -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
