@@ -96,30 +96,34 @@
     </table>
     <button onclick="updateSoldout()">수정하기</button>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 const checkboxes = document.querySelectorAll('.soldout-checkbox');
 
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
-        const menuName = this.getAttribute('data-menu-name');
-        const menuSoldout = this.getAttribute('data-menu-soldout');
+        var menuName = this.getAttribute('data-menu-name');
+        var menuSoldout = this.getAttribute('data-menu-soldout');
+        
         if (this.checked) {
+        	menuSoldout = 'y';
             console.log(menuName + ' 메뉴가 매진되었습니다.' + menuSoldout);
-            menuSoldout = 'y';
+            
         } else {
+        	menuSoldout = 'n';
             console.log(menuName + ' 메뉴가 매진 상태가 해제되었습니다.' + menuSoldout);
-            menuSoldout = 'n';
+            
         } 
-
+		
             $.ajax({
-                url: "/updateSoldout",
-                method: "POST",
+                url: "updateSoldout",
+                method: "get",
                 data: {
                     "menuName": menuName,
                     "menuSoldout": menuSoldout
                 },
                 success: function () {
+                	
                     console.log('품절 상태가 업데이트되었습니다.');
                 },
                 error: function () {

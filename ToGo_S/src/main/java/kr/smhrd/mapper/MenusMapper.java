@@ -23,7 +23,8 @@ public interface MenusMapper {
 	
 	void insertMenu(Menus menu);
 
-	void updateSoldout(@Param("menuName") String menuName, @Param("menuSoldout") String menuSoldout);
+	void updateSoldout(@Param("menuName") String menuName,
+			@Param("menuSoldout") String menuSoldout);
 	
 
     }
