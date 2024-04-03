@@ -25,6 +25,59 @@ Tooplate 2123 Simply Amazed
 https://www.tooplate.com/view/2123-simply-amazed
 
 -->
+</head>
+
+<body>
+
+
+
+
+	<!-- 헤드 끝 --------------------------------------------------------------------------------------------------------------------------------                        -->
+
+	<!-- 하단바 버튼------------------------------------------------------------------------------- -->
+
+
+
+
+
+	<!-- 주문관리------------------------------------------------------------------------------------ -->
+
+
+	<!-- 예약 관리------------------------------------------------------------------------------------ -->
+	<section class="gallery-section section parallax-window" id="section-3">
+		<div class="container">
+			<div class="title text-center mb-4">
+				<h3>메뉴 관리</h3>
+			</div>
+			<div class="row row-cols-1 row-cols-md-2 g-4">
+				<c:forEach items="${m_list}" var="m" varStatus="status">
+					<div class="col">
+						<div class="card h-100">
+							<!-- 이미지 추가 -->
+							<img src="resources/img/KakaoTalk_20240313_215409039.jpg"
+								class="card-img-top" alt="카드 이미지">
+							<div class="card-body">
+								<h5 class="card-title">${m.menu_name}</h5>
+								<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
+								<p class="card-text">${m.menu_desc}</p>
+							</div>
+							<div class="card-footer">
+								<button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal"
+									onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')"></button>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+			<div class="text-center mt-4">
+				<button class="btn btn-success btn-lg" data-bs-toggle="modal"
+					data-bs-target="#exampleModal" onclick="addmenu()">메뉴 추가하기</button>
+				<a href="gosoldout"><button class="btn btn-success btn-lg"
+						data-bs-toggle="modal" data-bs-target="#exampleModal">품절
+						상품 관리</button></a>
+			</div>
+		</div>
+	</section>
 
 
 
@@ -293,239 +346,13 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 	outline: none; /* 기본 포커스 효과 제거 */
 }
 
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f2f2f2;
-}
-
-.container {
-	max-width: 1200px;
-	margin: 20px auto;
-	padding: 20px;
-	background-color: #393F45;
-	border-radius: 10px;
-}
-
-/* 탭과 컨테이너 스타일 */
-.tab-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.tabs {
-	display: flex;
-	border-bottom: 1px solid #ddd;
-}
-
-.tab {
-	flex: 1;
-	height: 60px;
-	background-color: #4a4a4a;
-	border-right: 1px solid #ddd;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: bold;
-	text-transform: uppercase;
-	transition: background-color 0.3s;
-	color: #fff;
-}
-
-a {
-	text-decoration: none;
-	color: #fff;
-}
-
-.tab:hover {
-	background-color: #333333; /* 더 어두운 회색 */
-}
-
-.tab:last-child {
-	border-right: none;
-}
-
-.active-tab {
-	background-color: #3498db;
-	color: #fff;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.content-container {
-	display: flex;
-}
-
-.left-content {
-	width: 39%;
-	height:315.72px;
-	background-color: #4a4a4a;
-	overflow-y: auto;
-	padding: 20px;
-	color: #fff;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	position: relative;
-	z-index: 999;
-}
-
-.right-content {
-	width: 60%;
-	background-color: lightgray;
-	overflow-y: auto;
-	padding: 20px;
-	border-left: 1px solid #ddd;
-	font-weight: bold;
-	position: relative;
-	z-index: 3;
-}
-
-.first-null-page{
-	width: 2000px;
-	height:315.72px;
-	background-color: lightgray;
-	overflow-y: auto;
-	padding: 20px;
-	border-left: 1px solid #ddd;
-	right:25px;
-	position: absolute;
-	
-	z-index: 4;
-}
-
-/* 주문 목록 스타일 */
-.left-content ul {
-	padding: 0;
-	list-style: none;
-	margin-top: 0;
-}
-
-.left-content ul li {
-/* 	padding: 13px; */
-	border-bottom: 1px solid #white;
-	cursor: pointer;
-	transition: background-color 0.3s;
-	font-weight: bold;
-	
-}
-
-.left-content ul li:hover {
-	background-color: #333333; /* 더 어두운 회색 */
-}
-
-.left-content ul li:last-child {
-	border-bottom: none;
-}
-
-/* 주문 내용 스타일 */
-.order-info p {
-	margin: 5px 0;
-}
-
-.order-info span {
-	font-weight: bold;
-	margin-left: 5px;
-}
-
-/* 버튼 스타일 */
-button {
-	padding: 10px 20px;
-	background-color: #3498db;
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s;
-}
-
-button:hover {
-	background-color: #2980b9;
-}
-
-.fa-solid{
-	font-size: 20px;
-}
-
-.home-tag{
-	background: #1F1F77;
-}
-
 </style>
 
-</head>
 
-<body>
-
-
-
-
-	<!-- 헤드 끝 --------------------------------------------------------------------------------------------------------------------------------                        -->
-
-	<!-- 하단바 버튼------------------------------------------------------------------------------- -->
-
-
-
-
-
-	<!-- 주문관리------------------------------------------------------------------------------------ -->
-
-
-	<!-- 예약 관리------------------------------------------------------------------------------------ -->
-	<div class="tabs">
-		<div class="tab home-tag" onclick="openTab(0)" id="tab1">
-			<a href="goIndex"><i class="fa-solid fa-house"></i></a>
-		</div>
-	
-		<div class="tab" onclick="openTab(1)" id="tab1">
-		<a href="goStoreOrder">주문관리</a></div>
-		
-		<div class="tab" onclick="openTab(2)" id="tab2">
-		<a href="goReservation">완료주문관리</a></div>
-		
-		<div class="tab" onclick="openTab(3)" id="tab3">
-		<a href="goConMenu">메뉴관리</a></div>
-			
-		<div class="tab" onclick="openTab(4)" id="tab4">
-		<a href="goMoney">매출관리</a></div>
 	</div>
-	
-	<section class="gallery-section section parallax-window" id="section-3">
-		<div class="container">
-			<div class="title text-center mb-4">
-				<h3>메뉴 관리</h3>
-			</div>
-			<div class="row row-cols-1 row-cols-md-2 g-4">
-				<c:forEach items="${m_list}" var="m" varStatus="status">
-					<div class="col">
-						<div class="card h-100">
-							<!-- 이미지 추가 -->
-							<img src="resources/img/KakaoTalk_20240313_215409039.jpg"
-								class="card-img-top" alt="카드 이미지">
-							<div class="card-body">
-								<h5 class="card-title">${m.menu_name}</h5>
-								<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
-								<p class="card-text">${m.menu_desc}</p>
-							</div>
-							<div class="card-footer">
-								<button class="btn btn-primary w-100" data-bs-toggle="modal"
-									data-bs-target="#exampleModal"
-									onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')">수정하기</button>
-							</div>
-						</div>
-					</div>
-				</c:forEach>
-			</div>
-			<div class="text-center mt-4">
-				<button class="btn btn-success btn-lg" data-bs-toggle="modal"
-					data-bs-target="#exampleModal" onclick="addmenu()">메뉴 추가하기</button>
-				<a href="gosoldout"><button class="btn btn-success btn-lg"
-						data-bs-toggle="modal" data-bs-target="#exampleModal">품절
-						상품 관리</button></a>
-			</div>
-		</div>
-	</section>
 
 	<div class="overlay"></div>
+
 
 	<!-- Modal--------------------------------------------------------------------------------------------------------------------------- -->
 
@@ -588,11 +415,10 @@ button:hover {
 					<div class="desc">
 						<div style="height: 80px; width: 100%;">
 							<p class="p1">메뉴 설명</p>
-							<textarea style="width: 90%; height: 50px; margin-left: 25px;"
-								class="desc-text-box" id="menu_desc" name="menu_dessc"></textarea>
+							<input style="width: 90%; height: 50px; margin-left: 25px;"
+								class="desc-text-box" id="menu_desc" name="menu_desc">
 						</div>
 					</div>
-					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-bs-dismiss="modal">닫기</button>
@@ -603,18 +429,23 @@ button:hover {
 		</div>
 	</div>
 	<!-- modal 창   -->
-
-	<!-- <footer class="footer container container-2"> </footer> -->
-
-
-	<!-- 매출관리------------------------------------------------------------------------------------ -->
-
-	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous">
                   </script>
+
+
+
+
+
+
+	<footer class="footer container container-2"> </footer>
+	</section>
+
+	<!-- 매출관리------------------------------------------------------------------------------------ -->
+	</main>
+	</div>
 	<script src="resources/js/jquery-3.3.1.min.js"></script>
 	<script src="resources/js/bootstrap.bundle.min.js"></script>
 	<script src="resources/js/jquery.singlePageNav.min.js"></script>
@@ -672,12 +503,13 @@ button:hover {
        // modal 온클릭 
        function detailMenu(idx,name, price, desc, soldout,img){
 
+
           // menuName 메뉴 이름
           document.getElementById("menu_name").setAttribute("value", name);
           // menuPrice 메뉴 가격
           document.getElementById("menu_price").setAttribute("value", price);
           //menuImg 메뉴 이미지
-          document.getElementById("menu_img").setAttribute("value", img);
+          /* document.getElementById("menu_img").setAttribute("value", img); */
           // 메뉴 설명
           document.getElementById("menu_desc").setAttribute("value", desc);
           document.getElementById("menu_idx").setAttribute("value", idx);

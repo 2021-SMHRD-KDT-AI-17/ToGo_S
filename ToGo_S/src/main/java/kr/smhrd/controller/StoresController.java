@@ -39,7 +39,7 @@ public class StoresController {
 		List<Order> order_list = adminMapper.orderList();
 		session.setAttribute("order_list", order_list);
 		System.out.println(order_list.toString());
-		return "index";
+		return "Menu";
 	}
 	
 	@RequestMapping("/updateMenu")
