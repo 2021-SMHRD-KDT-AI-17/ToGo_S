@@ -30,7 +30,7 @@ https://www.tooplate.com/view/2123-simply-amazed
 
 <body>
 
-	<% 
+	<%
 	Stores loginStore = (Stores) session.getAttribute("loginStore");
 	%>
 
@@ -42,14 +42,21 @@ https://www.tooplate.com/view/2123-simply-amazed
 		<div class="banner-section section parallax-window"
 			data-parallax="scroll" id="section-1">
 			<div class="container">
-				<h1>환영합니다!! <%=loginStore.getStore_id()%>님</h1>
-				<a href="logout" style="position: absolute; top: 10px; right: 10px;">
-    <button class="btn-2">로그아웃</button>
-</a>
-				<div>
+				<div class="welcome-logout-box">
+					<h1>
+					환영합니다!&nbsp;
+					<%=loginStore.getStore_id()%>님
+				</h1>
+				<span><a href="logout">
+						<button class="btn-2">로그아웃</button>
+				</a></span>
+				</div>
+				
+				
+				<div class="button-box">
 					<a href="goOrderCon"><button class="btn-1">주문관리</button></a> <a
-						href="goReservation"><button class="btn-1">예약관리</button></a><br> <a
-						href="goConMenu"><button class="btn-1">메뉴관리</button></a> <a
+						href="goReservation"><button class="btn-1">예약관리</button></a><br>
+					<a href="goConMenu"><button class="btn-1">메뉴관리</button></a> <a
 						href="goMoney"><button class="btn-1">매출관리</button></a>
 
 				</div>
@@ -68,21 +75,20 @@ https://www.tooplate.com/view/2123-simply-amazed
 	background-color: gray; /* 버튼 배경색 */
 	border: 0; /* 테두리 없음 */
 	color: white; /* 텍스트 색상 */
-	padding: 10px 20px; /* 안쪽 여백 */
+	padding: 5px 5px; /* 안쪽 여백 */
 	text-align: center; /* 텍스트 중앙 정렬 */
 	text-decoration: none; /* 텍스트에 밑줄 없음 */
 	display: inline-block; /* 인라인 요소로 표시 */
-	font-size: 16px; /* 폰트 크기 */
+	font-size: 24px; /* 폰트 크기 */
 	margin: 4px 2px; /* 바깥쪽 여백 */
 	cursor: pointer; /* 커서 스타일 */
 	border-radius: 20px; /* 버튼 모서리 둥글게 */
-	margin-right: 100px;
-	margin-left: 100px;
-	width: 300px; /* 버튼의 너비 */
-	height: 100px; /* 버튼의 높이 */
-	font-size: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 200px; /* 버튼의 너비 */
+	height: 200px; /* 버튼의 높이 */
 	font-weight: bold;
-	margin-top: 100px;
+	margin-top: 20px;
 }
 
 .btn-2 {
@@ -90,20 +96,31 @@ https://www.tooplate.com/view/2123-simply-amazed
 	border: 0; /* 테두리 없음 */
 	color: white; /* 텍스트 색상 */
 	padding: 10px 20px; /* 안쪽 여백 */
-	text-align: center; /* 텍스트 중앙 정렬 */
+
 	text-decoration: none; /* 텍스트에 밑줄 없음 */
 	display: inline-block; /* 인라인 요소로 표시 */
 	font-size: 16px; /* 폰트 크기 */
 	margin: 4px 2px; /* 바깥쪽 여백 */
 	cursor: pointer; /* 커서 스타일 */
 	border-radius: 20px; /* 버튼 모서리 둥글게 */
-	margin-right: 100px;
-	margin-left: 100px;
+	/* margin-right: 100px; */
+	margin-left: 300px;
 	width: 100px; /* 버튼의 너비 */
 	height: 50px; /* 버튼의 높이 */
 	font-size: 15px;
 	font-weight: bold;
 	margin-top: 50px;
+}
+
+.button-box {
+	margin-top: 20px;
+}
+
+.welcome-logout-box{
+	display: flex; 
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
 }
 
 /* 호버 효과 */
@@ -215,12 +232,10 @@ https://www.tooplate.com/view/2123-simply-amazed
 
 .parallax-window {
 	background: #393f45;
-	
 }
 
 .body {
 	background-color: #393f45;
-	
 }
 
 h1 {
@@ -333,14 +348,15 @@ th {
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 			crossorigin="anonymous">
-                  </script>
+			
+		</script>
 
 
 
 
 
 
-		<footer class="footer container container-2"> </footer>
+
 		</section>
 
 		<!-- 매출관리------------------------------------------------------------------------------------ -->
@@ -354,92 +370,90 @@ th {
 	<script src="resources/js/templatemo-script.js"></script>
 
 	<script type="text/javascript">
-    
-       const tabList = document.querySelectorAll('.tab_menu .list li');
-       for (var i = 0; i < tabList.length; i++) {
-          tabList[i].querySelector('.btn').addEventListener('click',
-                function(e) {
-                   e.preventDefault();
-                   for (var j = 0; j < tabList.length; j++) {
-                      tabList[j].classList.remove('is_on');
-                   }
-                   this.parentNode.classList.add('is_on');
-                });
-       }
-   
-       document.getElementById("trigger").addEventListener("click",
-             function() {
-                var popup = document.getElementById("popup");
-                var overlay = document.querySelector(".overlay");
-                var body = document.body;
-   
-                popup.style.display = "block";
-                overlay.style.display = "block";
-                body.classList.add("blur");
-                body.style.overflow = "hidden";
-   
-                // 서서히 나타나는 애니메이션 적용
-                setTimeout(function() {
-                   popup.style.opacity = "1";
-                }, 50); // 약간의 지연 추가
-             });
-   
-       function closePopup() {
-          var popup = document.getElementById("popup");
-          var overlay = document.querySelector(".overlay");
-          var body = document.body;
-   
-          // 서서히 사라지는 애니메이션 적용
-          popup.style.opacity = "0";
-   
-          // 애니메이션 시간만큼의 지연 추가
-          setTimeout(function() {
-             popup.style.display = "none";
-             overlay.style.display = "none";
-             body.classList.remove("blur");
-             body.style.overflow = "";
-          }, 300);
-       }
-       // modal 온클릭 
-       function detailMenu(idx,name, price, desc, soldout,img){
+		const tabList = document.querySelectorAll('.tab_menu .list li');
+		for (var i = 0; i < tabList.length; i++) {
+			tabList[i].querySelector('.btn').addEventListener('click',
+					function(e) {
+						e.preventDefault();
+						for (var j = 0; j < tabList.length; j++) {
+							tabList[j].classList.remove('is_on');
+						}
+						this.parentNode.classList.add('is_on');
+					});
+		}
 
-          // menuName 메뉴 이름
-          document.getElementById("menu_name").setAttribute("value", name);
-          // menuPrice 메뉴 가격
-          document.getElementById("menu_price").setAttribute("value", price);
-          //menuImg 메뉴 이미지
-          document.getElementById("menu_img").setAttribute("value", img);
-          // 메뉴 설명
-          document.getElementById("menu_desc").setAttribute("value", desc);
-          document.getElementById("menu_idx").setAttribute("value", idx);
-          document.getElementById("btn").setAttribute("value","수정하기");
-          // soldout 아직 안함
+		document.getElementById("trigger").addEventListener("click",
+				function() {
+					var popup = document.getElementById("popup");
+					var overlay = document.querySelector(".overlay");
+					var body = document.body;
 
-       }
-       
-       // 추가하기 onclick
-       function addmenu(){
-          document.getElementById("menu_name").setAttribute("value","");
-           // menuPrice 메뉴 가격
-           document.getElementById("menu_price").setAttribute("value",0);
-           //menuImg 메뉴 이미지
-           document.getElementById("menu_img").setAttribute("value","");
-           // 메뉴 설명
-           document.getElementById("menu_desc").setAttribute("value","");
-           document.getElementById("menu_idx").setAttribute("value",0);
-           document.getElementById("btn").setAttribute("value","추가하기");
-           
-       }
-       
-       
-       // 라디오 y,n 설정
-       function toggleValue(checkbox) {
-           if (checkbox.checked) {
-               checkbox.value = "y";
-           } else {
-               checkbox.value = "n";
-           }
-       }
-    </script>
+					popup.style.display = "block";
+					overlay.style.display = "block";
+					body.classList.add("blur");
+					body.style.overflow = "hidden";
+
+					// 서서히 나타나는 애니메이션 적용
+					setTimeout(function() {
+						popup.style.opacity = "1";
+					}, 50); // 약간의 지연 추가
+				});
+
+		function closePopup() {
+			var popup = document.getElementById("popup");
+			var overlay = document.querySelector(".overlay");
+			var body = document.body;
+
+			// 서서히 사라지는 애니메이션 적용
+			popup.style.opacity = "0";
+
+			// 애니메이션 시간만큼의 지연 추가
+			setTimeout(function() {
+				popup.style.display = "none";
+				overlay.style.display = "none";
+				body.classList.remove("blur");
+				body.style.overflow = "";
+			}, 300);
+		}
+		// modal 온클릭 
+		function detailMenu(idx, name, price, desc, soldout, img) {
+
+			// menuName 메뉴 이름
+			document.getElementById("menu_name").setAttribute("value", name);
+			// menuPrice 메뉴 가격
+			document.getElementById("menu_price").setAttribute("value", price);
+			//menuImg 메뉴 이미지
+			document.getElementById("menu_img").setAttribute("value", img);
+			// 메뉴 설명
+			document.getElementById("menu_desc").setAttribute("value", desc);
+			document.getElementById("menu_idx").setAttribute("value", idx);
+			document.getElementById("btn").setAttribute("value", "수정하기");
+			// soldout 아직 안함
+
+		}
+
+		// 추가하기 onclick
+		function addmenu() {
+			document.getElementById("menu_name").setAttribute("value", "");
+			// menuPrice 메뉴 가격
+			document.getElementById("menu_price").setAttribute("value", 0);
+			//menuImg 메뉴 이미지
+			document.getElementById("menu_img").setAttribute("value", "");
+			// 메뉴 설명
+			document.getElementById("menu_desc").setAttribute("value", "");
+			document.getElementById("menu_idx").setAttribute("value", 0);
+			document.getElementById("btn").setAttribute("value", "추가하기");
+
+		}
+
+		// 라디오 y,n 설정
+		function toggleValue(checkbox) {
+			if (checkbox.checked) {
+				checkbox.value = "y";
+			} else {
+				checkbox.value = "n";
+			}
+		}
+	</script>
 </body>
 </html>

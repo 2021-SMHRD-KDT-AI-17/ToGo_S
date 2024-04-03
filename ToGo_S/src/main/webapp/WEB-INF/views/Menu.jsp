@@ -401,11 +401,12 @@ a {
 }
 
 .left-content ul li {
-	padding: 13px;
-	border-bottom: 1px solid #ddd;
+/* 	padding: 13px; */
+	border-bottom: 1px solid #white;
 	cursor: pointer;
 	transition: background-color 0.3s;
 	font-weight: bold;
+	
 }
 
 .left-content ul li:hover {
@@ -524,12 +525,7 @@ button:hover {
 		</div>
 	</section>
 
-
-
-	</div>
-
 	<div class="overlay"></div>
-
 
 	<!-- Modal--------------------------------------------------------------------------------------------------------------------------- -->
 
@@ -596,7 +592,7 @@ button:hover {
 								class="desc-text-box" id="menu_desc" name="menu_dessc"></textarea>
 						</div>
 					</div>
-					s
+					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-bs-dismiss="modal">닫기</button>
@@ -607,23 +603,18 @@ button:hover {
 		</div>
 	</div>
 	<!-- modal 창   -->
+
+	<!-- <footer class="footer container container-2"> </footer> -->
+
+
+	<!-- 매출관리------------------------------------------------------------------------------------ -->
+
+	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous">
                   </script>
-
-
-
-
-
-
-	<!-- <footer class="footer container container-2"> </footer> -->
-	</section>
-
-	<!-- 매출관리------------------------------------------------------------------------------------ -->
-	</main>
-	</div>
 	<script src="resources/js/jquery-3.3.1.min.js"></script>
 	<script src="resources/js/bootstrap.bundle.min.js"></script>
 	<script src="resources/js/jquery.singlePageNav.min.js"></script>
