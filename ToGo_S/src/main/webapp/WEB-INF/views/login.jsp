@@ -4,23 +4,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 <style>
 body {
    font-family: Arial, sans-serif;
    background-color: #f4f4f4;
    margin: 0;
    padding: 0;
+   width: 1500px;
+   height: 1200px;
+   
 }
 
-.login-container {
-   max-width: 400px;
-   margin: 100px auto;
-   background-color: #fff;
-   border-radius: 8px;
-   padding: 20px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.text-center{
+	width: 1500px;
+	height: 1200px;
 }
+
+
 
 h2 {
    text-align: center;
@@ -70,8 +72,7 @@ button:focus {
 }
 </style>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>

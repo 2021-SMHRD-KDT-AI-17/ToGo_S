@@ -81,12 +81,15 @@ a {
 }
 
 .left-content {
-	width: 40%;
+	width: 39%;
+	height:315.72px;
 	background-color: #4a4a4a;
 	overflow-y: auto;
 	padding: 20px;
 	color: #fff;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	position: relative;
+	z-index: 999;
 }
 
 .right-content {
@@ -96,6 +99,21 @@ a {
 	padding: 20px;
 	border-left: 1px solid #ddd;
 	font-weight: bold;
+	position: relative;
+	z-index: 3;
+}
+
+.first-null-page{
+	width: 1000px;
+	height:315.72px;
+	background-color: lightgray;
+	overflow-y: auto;
+	padding: 20px;
+	border-left: 1px solid #ddd;
+	right:25px;
+	position: absolute;
+	
+	z-index: 4;
 }
 
 /* 주문 목록 스타일 */
@@ -106,7 +124,7 @@ a {
 }
 
 .left-content ul li {
-	padding: 15px;
+	padding: 13px;
 	border-bottom: 1px solid #ddd;
 	cursor: pointer;
 	transition: background-color 0.3s;
@@ -145,11 +163,23 @@ button {
 button:hover {
 	background-color: #2980b9;
 }
+
+.fa-solid{
+	font-size: 20px;
+}
+
+.home-tag{
+	background: #1F1F77;
+}
 </style>
 </head>
 
 <body>
 	<div class="tabs">
+		<div class="tab home-tag" onclick="openTab(0)" id="tab1">
+			<a href="goStoreOrder"><i class="fa-solid fa-house"></i></a>
+		</div>
+	
 		<div class="tab" onclick="openTab(1)" id="tab1">
 		<a href="goStoreOrder">주문관리</a></div>
 		
@@ -184,6 +214,9 @@ button:hover {
 				</ul>
 			</div>
 		</div>
+		<div id="" class="first-null-page">
+			
+		</div>
 		<div id="rightContent" class="right-content">
 			<div class="div_tag">
 				<!-- 내용을 여기에 추가할 수 있습니다. -->
@@ -207,7 +240,7 @@ button:hover {
 			</div>
 		</div>
 </body>
-
+<script src="https://kit.fontawesome.com/d97bdf4abd.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	function showAlert() {
 		alert("완료되었습니다!");
@@ -289,6 +322,17 @@ button:hover {
 	    // 생성된 div를 detail이라는 id를 가진 div에 추가
 	    detailDiv.appendChild(div);
 	}
+	
+	document.addEventListener("DOMContentLoaded", function() {
+	    // 왼쪽 콘텐츠 영역을 클릭했을 때
+	    document.getElementById("leftContent").addEventListener("click", function() {
+	        // .first-null-page를 찾아서 숨김
+	        var firstNullPage = document.querySelector(".first-null-page");
+	        if (firstNullPage) {
+	            firstNullPage.style.display = "none";
+	        }
+	    });
+	});
 
 
 
