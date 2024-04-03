@@ -177,14 +177,14 @@ button:hover {
 <body>
 	<div class="tabs">
 		<div class="tab home-tag" onclick="openTab(0)" id="tab1">
-			<a href="goStoreOrder"><i class="fa-solid fa-house"></i></a>
+			<a href="goIndex"><i class="fa-solid fa-house"></i></a>
 		</div>
 	
 		<div class="tab" onclick="openTab(1)" id="tab1">
 		<a href="goStoreOrder">주문관리</a></div>
 		
 		<div class="tab" onclick="openTab(2)" id="tab2">
-		<a href="goReservation">예약관리</a></div>
+		<a href="goReservation">완료주문관리</a></div>
 		
 		<div class="tab" onclick="openTab(3)" id="tab3">
 		<a href="goConMenu">메뉴관리</a></div>
@@ -230,12 +230,12 @@ button:hover {
 					</div>
 					<!-- order detail 내용  반복 예정 -->
 					<div id="detail"></div>
-					<div>
+<!-- 					<div>
 						<p>
 							<span>000</span>분 후 픽업
 						</p>
 						<button>준비 완료</button>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

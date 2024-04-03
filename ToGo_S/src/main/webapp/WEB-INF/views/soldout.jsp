@@ -94,8 +94,10 @@
             </tr>
         </c:forEach>
     </table>
-    <button onclick="updateSoldout()">수정하기</button>
-
+    
+<!--     <button onclick="updateSoldout()">수정하기</button>
+ -->
+ 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 const checkboxes = document.querySelectorAll('.soldout-checkbox');
@@ -132,10 +134,10 @@ checkboxes.forEach(checkbox => {
             });
         });
     });
-
+/* 
     function updateSoldout() {
         console.log('수정하기 버튼이 클릭되었습니다.');
-    }
+    } */
 </script>
 
     </script>

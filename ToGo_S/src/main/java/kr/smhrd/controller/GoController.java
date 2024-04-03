@@ -49,6 +49,12 @@ public class GoController {
 		}
 		
 	}
+	// 홈화면 클릭시 ->로그인후 인덱스 화면
+	@RequestMapping("/goIndex")
+	public String goIndex() {
+		return "index";
+	}
+	
 	// 로그인 이후 -> 주문 관리
 	@RequestMapping("/goOrderCon")
     public String goOrderCon() {
