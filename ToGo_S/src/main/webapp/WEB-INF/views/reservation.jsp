@@ -104,7 +104,7 @@ a {
 }
 
 .first-null-page{
-	width: 1000px;
+	width: 2000px;
 	height:315.72px;
 	background-color: lightgray;
 	overflow-y: auto;
