@@ -232,7 +232,7 @@ button:hover {
 					<div id="detail"></div>
 					<div>
 						<p>
-							<span>000</span>분 후 픽업
+							<span>25</span>분 후 픽업
 						</p>
 						<button onclick="removeElement()">준비 완료</button>
 					</div>
