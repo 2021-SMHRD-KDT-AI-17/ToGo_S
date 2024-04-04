@@ -26,50 +26,12 @@ Tooplate 2123 Simply Amazed
 https://www.tooplate.com/view/2123-simply-amazed
 
 -->
-</head>
-
-<body>
-
-	<%
-	Stores loginStore = (Stores) session.getAttribute("loginStore");
-	%>
-
-
-	<!-- 헤드 끝 --------------------------------------------------------------------------------------------------------------------------------                        -->
-
-	<!-- 하단바 버튼------------------------------------------------------------------------------- -->
-	<main id="content-box" class="order-first">
-		<div class="banner-section section parallax-window"
-			data-parallax="scroll" id="section-1">
-			<div class="container">
-				<div class="welcome-logout-box">
-					<h1>
-					환영합니다!&nbsp;
-					<%=loginStore.getStore_id()%>님
-				</h1>
-				<span><a href="logout">
-						<button class="btn-2">로그아웃</button>
-				</a></span>
-				</div>
-				
-				
-				<div class="button-box">
-					<a href="goOrderCon"><button class="btn-1">주문관리</button></a> <a
-						href="goReservation"><button class="btn-1">예약관리</button></a><br>
-					<a href="goConMenu"><button class="btn-1">메뉴관리</button></a> <a
-						href="goMoney"><button class="btn-1">매출관리</button></a>
-
-				</div>
-			</div>
-		</div>
-
-
-
-		<!-- 주문관리------------------------------------------------------------------------------------ -->
-
-
-
-		<style>
+<style>
+@font-face {
+	font-family: 'BMJUA_ttf';
+	src: url("resources/assets/fonts/BMJUA_ttf.ttf");
+	font-style: normal;
+}
 /* 기본 버튼 스타일 */
 .btn-1 {
 	background-color: gray; /* 버튼 배경색 */
@@ -96,7 +58,6 @@ https://www.tooplate.com/view/2123-simply-amazed
 	border: 0; /* 테두리 없음 */
 	color: white; /* 텍스트 색상 */
 	padding: 10px 20px; /* 안쪽 여백 */
-
 	text-decoration: none; /* 텍스트에 밑줄 없음 */
 	display: inline-block; /* 인라인 요소로 표시 */
 	font-size: 16px; /* 폰트 크기 */
@@ -116,17 +77,19 @@ https://www.tooplate.com/view/2123-simply-amazed
 	margin-top: 20px;
 }
 
-.welcome-logout-box{
-	display: flex; 
+.welcome-logout-box {
+	display: flex;
 	justify-content: center;
-	align-items:center;
+	align-items: center;
 	flex-direction: column;
 }
 
 /* 호버 효과 */
 .btn-2:hover {
-	background-color: lightgreen; /* 호버 시 배경색 변경 */
+	background-color: #DADCFC; /* 호버 시 배경색 변경 */
 	color: black;
+	transform: translateY(-5px);
+	transition: all ease-in-out .5s;
 }
 
 .gallery-section {
@@ -226,8 +189,10 @@ https://www.tooplate.com/view/2123-simply-amazed
 }
 
 .btn-1:hover {
-	background-color: lightgreen;
-	color: black;
+	background-color: #DADCFC;
+	color: #545454;
+	transform: translateY(-5px);
+	transition: all ease-in-out .5s;
 }
 
 .parallax-window {
@@ -249,6 +214,11 @@ h3 {
 	text-align: left;
 }
 
+a{
+	font-family: 'BMJUA_ttf'; 
+	letter-spacing: 3px;
+}
+
 #content-box {
 	top: 0;
 	left: 0;
@@ -264,6 +234,51 @@ th {
 	color: white;
 }
 </style>
+
+
+</head>
+
+<body style="font-family: 'BMJUA_ttf'; letter-spacing: 3px;">
+
+	<%
+	Stores loginStore = (Stores) session.getAttribute("loginStore");
+	%>
+
+
+	<!-- 헤드 끝 --------------------------------------------------------------------------------------------------------------------------------                        -->
+
+	<!-- 하단바 버튼------------------------------------------------------------------------------- -->
+	<main id="content-box" class="order-first">
+		<div class="banner-section section parallax-window"
+			data-parallax="scroll" id="section-1">
+			<div class="container">
+				<div class="welcome-logout-box">
+					<h1>
+						환영합니다!&nbsp;
+						<%=loginStore.getStore_id()%>님
+					</h1>
+					<span><a href="logout">
+							<button class="btn-2">로그아웃</button>
+					</a></span>
+				</div>
+
+
+				<div class="button-box">
+					<a href="goOrderCon"><button class="btn-1">주문관리</button></a> <a
+						href="goReservation"><button class="btn-1">예약관리</button></a><br>
+					<a href="goConMenu"><button class="btn-1">메뉴관리</button></a> <a
+						href="goMoney"><button class="btn-1">매출관리</button></a>
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- 주문관리------------------------------------------------------------------------------------ -->
+
+
+
 
 
 		</div>

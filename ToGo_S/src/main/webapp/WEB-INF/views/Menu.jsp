@@ -32,6 +32,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #f2f2f2;
+	height:2000px;
 }
 
 .container {
@@ -62,7 +63,7 @@ body {
 
 .tab {
 	flex: 1;
-	height: 60px;
+	height: 120px;
 	background-color: #4a4a4a;
 	border-right: 1px solid #ddd;
 	cursor: pointer;
@@ -96,11 +97,12 @@ a {
 
 .content-container {
 	display: flex;
+	height: 800px;
 }
 
 .left-content {
 	width: 39%;
-	height: 315.72px;
+	height: 603px !important;
 	background-color: #4a4a4a;
 	overflow-y: auto;
 	padding: 20px;

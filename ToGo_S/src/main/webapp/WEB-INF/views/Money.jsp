@@ -270,6 +270,10 @@ button:hover {
 	background: #1F1F77;
 }
 
+#detail{
+	overflow-y: hidden;
+}
+
 </style>
 </head>
 <body>

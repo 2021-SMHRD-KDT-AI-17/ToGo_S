@@ -92,7 +92,7 @@ a {
 	z-index: 999;
 }
 
-.right-content {
+/* .right-content {
 	width: 60%;
 	background-color: lightgray;
 	overflow-y: auto;
@@ -101,7 +101,7 @@ a {
 	font-weight: bold;
 	position: relative;
 	z-index: 3;
-}
+} */
 
 .first-null-page{
 	width: 2000px;
@@ -170,6 +170,10 @@ button:hover {
 
 .home-tag{
 	background: #1F1F77;
+}
+
+#detail{
+	overflow-y: hidden;
 }
 </style>
 </head>
@@ -299,7 +303,7 @@ button:hover {
 	    menuName.appendChild(menuNameSpan);
 
 	    var menuCount = document.createElement('p');
-	    menuCount.innerText = '갯수: ';
+	    menuCount.innerText = '개수: ';
 	    var menuCountSpan = document.createElement('span');
 	    menuCountSpan.innerText = menu.order_cnt; // 수정된 부분
 	    menuCount.appendChild(menuCountSpan);
