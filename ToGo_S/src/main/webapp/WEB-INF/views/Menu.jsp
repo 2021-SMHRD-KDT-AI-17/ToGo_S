@@ -409,7 +409,7 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 					</div>
 					<div class="file-select-button">
 						<label for="file-upload" class="custom-file-upload"> 파일
-									선택 </label> <input id="file-upload" type="file">	
+									선택 </label> <input id="file-upload" type="file" name = "menu_img">	
 					</div>
 					
 					<div class="desc">

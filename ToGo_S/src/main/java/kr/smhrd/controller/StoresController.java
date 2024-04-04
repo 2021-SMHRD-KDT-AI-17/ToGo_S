@@ -59,7 +59,6 @@ public class StoresController {
 		}else {
 			menusMapper.insertMenu(menu);
 		}
-			
 			System.out.println(menu.toString());
 		
 			List<Menu> m_list = menusMapper.getMenuList(loginStore.getStore_id());
