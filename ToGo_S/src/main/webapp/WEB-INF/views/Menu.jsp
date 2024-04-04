@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="resources/fontawesome/css/all.min.css"
 	type="text/css" />
 <link rel="stylesheet" href="resources/css/slick.css" type="text/css" />
-<link rel="stylesheet" href="resources/css/tooplate-simply-amazed.css"
-	type="text/css" />
+<!-- <link rel="stylesheet" href="resources/css/tooplate-simply-amazed.css"
+	type="text/css" /> -->
 <!--
 
 Tooplate 2123 Simply Amazed
@@ -27,7 +27,6 @@ https://www.tooplate.com/view/2123-simply-amazed
 -->
 
 <style>
-
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
@@ -42,7 +41,8 @@ body {
 	background-color: #393f45;
 	border: 1px solid #ddd;
 	border-radius: 10px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	overflow-x: hidden;
 }
 
 /* 탭과 컨테이너 스타일 */
@@ -51,8 +51,8 @@ body {
 	flex-direction: column;
 }
 
-.container{
-	height: 700px;
+.container {
+	height: 400px;
 }
 
 .tabs {
@@ -100,7 +100,7 @@ a {
 
 .left-content {
 	width: 39%;
-	height:315.72px;
+	height: 315.72px;
 	background-color: #4a4a4a;
 	overflow-y: auto;
 	padding: 20px;
@@ -121,16 +121,15 @@ a {
 	z-index: 3;
 }
 
-.first-null-page{
+.first-null-page {
 	width: 2000px;
-	height:315.72px;
+	height: 315.72px;
 	background-color: lightgray;
 	overflow-y: auto;
 	padding: 20px;
 	border-left: 1px solid #ddd;
-	right:25px;
+	right: 25px;
 	position: absolute;
-	
 	z-index: 4;
 }
 
@@ -182,11 +181,11 @@ button:hover {
 	background-color: #2980b9;
 }
 
-.fa-solid{
+.fa-solid {
 	font-size: 20px;
 }
 
-.home-tag{
+.home-tag {
 	background: #1F1F77;
 }
 
@@ -241,8 +240,9 @@ button:hover {
 
 .gallery-section {
 	margin-top: 0px;
-	padding: 100px 0;
+	height: 600px; padding : 0px 0;
 	background-color: #f8f9fa;
+	padding: 0px 0;
 }
 
 .card {
@@ -258,7 +258,6 @@ button:hover {
 	/* object-fit: cover; /* 이미지가 카드에 꽉 차게 조절 */ */
 	top: 0; /* 카드의 상단에 위치 */
 	right: 0; /* 카드의 우측에 위치 */
-	
 }
 
 .card:hover {
@@ -341,7 +340,6 @@ button:hover {
 
 .parallax-window {
 	background: #393f45;
-	overflow-x: auto;
 	overflow-y: auto;
 }
 
@@ -451,8 +449,6 @@ input[type="file"] {
 	border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 	outline: none; /* 기본 포커스 효과 제거 */
 }
-
-
 </style>
 
 
@@ -497,53 +493,63 @@ input[type="file"] {
 
 	<!-- 예약 관리------------------------------------------------------------------------------------ -->
 	<div style="display: flex; flex-direction: column;">
-			<div style="background:#393f45;">
-				<h3 style="position: relative; left:180px;">메뉴 관리</h3>
-			</div>
-	<section class="gallery-section section parallax-window" id="section-3">
-		
-		<div class="container" style="overflow-y: auto;">
-		
-			
-			<div class="row row-cols-1 row-cols-md-2 g-4" style="position: relative; bottom:60px;">
-				<c:forEach items="${m_list}" var="m" varStatus="status">
-					<div class="col" style="position: relative; top:100px; left:80px;">
-						<div class="card h-300">
-							<!-- 이미지 추가 -->
+		<div style="background: #393f45;">
+			<h3 style="position: relative; left: 180px;">메뉴 관리</h3>
+		</div>
+		<section class="gallery-section section parallax-window"
+			id="section-3">
 
-							<div class="card-body"
-								<!-- style="display: flex; justify-content: space-between;"  -->>
-								<div>
-									<h5 class="card-title">${m.menu_name}</h5>
-									<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
-									<p class="card-text">${m.menu_desc}</p>
+			<div class="container" style="overflow-y: auto;">
+
+
+				<div class="row row-cols-1 row-cols-md-2 g-4"
+					style="position: relative; bottom: 60px;">
+					<c:forEach items="${m_list}" var="m" varStatus="status">
+						<div class="col"
+							style="position: relative; top: 70px; left: 80px; padding: 10px;">
+							<div class="card h-300">
+								<!-- 이미지 추가 -->
+
+								<div class="card-body"
+									style="display: flex; justify-content: space-between;">
+
+									<div>
+										<h5 class="card-title">${m.menu_name}</h5>
+										<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
+										<p class="card-text">${m.menu_desc}</p>
+									</div>
+									<div>
+										<img src="resources/img/${m.menu_img }" class="card-img-top"
+											alt="카드 이미지" width="100px">
+									</div>
+
+
 								</div>
-								<div>
-									<img src="resources/img/${m.menu_img }"
-									class="card-img-top" alt="카드 이미지" width = "100px">
+								<div class="card-footer" style="padding: 0px;">
+									<button class="btn btn-primary w-100" data-bs-toggle="modal"
+										data-bs-target="#exampleModal"
+										onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')">수정하기</button>
 								</div>
-								
-								
-							</div>
-							<div class="card-footer" style="padding: 0px;">
-								<button class="btn btn-primary w-100" data-bs-toggle="modal"
-									data-bs-target="#exampleModal"
-									onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')">수정하기</button>
 							</div>
 						</div>
-					</div>
-				</c:forEach>
+					</c:forEach>
+				</div>
+
 			</div>
-			<div class="text-center mt-4" style="padding: 100px; margin-top: 100px" >
+			<div class="text-center mt-4"
+				style="padding: 40px; margin-top: 100px">
 				<button class="btn btn-success btn-lg" data-bs-toggle="modal"
 					data-bs-target="#exampleModal" onclick="addmenu()">메뉴 추가하기</button>
 				<a href="gosoldout"><button class="btn btn-success btn-lg"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">품절
 						상품 관리</button></a>
 			</div>
-		</div>
-	</section>
+		</section>
+
+
 	</div>
+
+
 
 
 
@@ -585,9 +591,8 @@ input[type="file"] {
 									</p>
 
 									<p class="p2">
-										메뉴 가격 <br>
-										<input type="text" placeholder="0" class="i3" id="menu_price"
-											name="menu_price">원
+										메뉴 가격 <br> <input type="text" placeholder="0" class="i3"
+											id="menu_price" name="menu_price">원
 									</p>
 								</article>
 
@@ -611,7 +616,7 @@ input[type="file"] {
 					</div>
 
 					<div class="desc">
-						<div style="width: 100%; padding:20px;">
+						<div style="width: 100%; padding: 20px;">
 							<p class="p1">메뉴 설명</p>
 							<input style="width: 90%; height: 50px; margin-left: 25px;"
 								class="desc-text-box" id="menu_desc" name="menu_desc">
@@ -649,7 +654,8 @@ input[type="file"] {
 	<script src="resources/js/slick.js"></script>
 	<script src="resources/js/parallax.min.js"></script>
 	<script src="resources/js/templatemo-script.js"></script>
-	<script src="https://kit.fontawesome.com/d97bdf4abd.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/d97bdf4abd.js"
+		crossorigin="anonymous"></script>
 	<script type="text/javascript">
     
        const tabList = document.querySelectorAll('.tab_menu .list li');
