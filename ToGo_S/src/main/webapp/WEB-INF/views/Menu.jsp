@@ -26,7 +26,7 @@ https://www.tooplate.com/view/2123-simply-amazed
 
 -->
 
-	<style>
+<style>
 /* 기본 버튼 스타일 */
 .btn-1 {
 	background-color: gray; /* 버튼 배경색 */
@@ -70,7 +70,6 @@ https://www.tooplate.com/view/2123-simply-amazed
 	margin-top: 50px;
 }
 
-
 /* 호버 효과 */
 .btn-2:hover {
 	background-color: lightgreen; /* 호버 시 배경색 변경 */
@@ -86,18 +85,17 @@ https://www.tooplate.com/view/2123-simply-amazed
 	border: none;
 	transition: all 0.3s ease;
 	width: 400px; /* 카드의 너비 */
-	height: 300px; /* 카드의 높이 */
+	height: 200px; /* 카드의 높이 */
 	position: relative; /* 상대 위치 지정 */
 }
 
 .card-img-top {
 	width: 180px; /* 이미지의 너비 조절 */
-	height: 110px; /* 이미지의 높이 조절 */
-	object-fit: cover; /* 이미지가 카드에 꽉 차게 조절 */
-	position: absolute; /* 절대 위치 지정 */
+	height: 160px;
+	/* object-fit: cover; /* 이미지가 카드에 꽉 차게 조절 */ */
 	top: 0; /* 카드의 상단에 위치 */
 	right: 0; /* 카드의 우측에 위치 */
-	margin-right: 16px;
+	
 }
 
 .card:hover {
@@ -181,7 +179,7 @@ https://www.tooplate.com/view/2123-simply-amazed
 .parallax-window {
 	background: #393f45;
 	overflow-x: auto;
-    overflow-y: auto;
+	overflow-y: auto;
 }
 
 .body {
@@ -245,56 +243,51 @@ textarea:focus {
 }
 
 .custom-file-upload {
-    border: 2px solid #007bff; /* 테두리 스타일 설정 */
-    display: inline-block; /* 인라인 요소로 표시 */
-    padding: 10px 20px; /* 내부 여백 설정 */
-    cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능한 상태로 표시 */
-    color: #007bff; /* 텍스트 색상 설정 */
-    background-color: #fff; /* 배경색 설정 */
-    border-radius: 5px; /* 테두리의 모서리를 둥글게 설정 */
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* 배경색, 텍스트 색상, 테두리 색상 변경에 애니메이션 적용 */
+	border: 2px solid #007bff; /* 테두리 스타일 설정 */
+	display: inline-block; /* 인라인 요소로 표시 */
+	padding: 10px 20px; /* 내부 여백 설정 */
+	cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능한 상태로 표시 */
+	color: #007bff; /* 텍스트 색상 설정 */
+	background-color: #fff; /* 배경색 설정 */
+	border-radius: 5px; /* 테두리의 모서리를 둥글게 설정 */
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+	/* 배경색, 텍스트 색상, 테두리 색상 변경에 애니메이션 적용 */
 }
 
 .custom-file-upload:hover {
-    background-color: #007bff; /* 호버 시 배경색 변경 */
-    color: #fff; /* 호버 시 텍스트 색상 변경 */
-    border-color: #0056b3; /* 호버 시 테두리 색상 변경 */
+	background-color: #007bff; /* 호버 시 배경색 변경 */
+	color: #fff; /* 호버 시 텍스트 색상 변경 */
+	border-color: #0056b3; /* 호버 시 테두리 색상 변경 */
 }
 
 /* 파일 선택 아이콘 */
 .custom-file-upload i {
-    margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 설정 */
+	margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 설정 */
 }
 
-.file-select-button{
-	position:relative;
-	left:30px;
+.file-select-button {
+	position: relative;
+	left: 30px;
 	bottom: 20px;
 }
 
 /* 숨겨진 파일 업로드 버튼 */
 input[type="file"] {
-    display: none; /* 파일 업로드 버튼 숨기기 */
+	display: none; /* 파일 업로드 버튼 숨기기 */
 }
 
-.i3{
-  padding: 10px; /* 내부 여백 설정 */
+.i3 {
+	padding: 10px; /* 내부 여백 설정 */
 	border: 1px solid #ccc; /* 테두리 스타일 설정 */
 	border-radius: 5px; /* 테두리의 모서리를 둥글게 설정 */
 	font-size: 16px; /* 폰트 크기 설정 */
-	
-	
 	transition: border-color 0.3s; /* 테두리 색상 변경에 애니메이션 적용 */
 }
-.i3:focus{
-border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
+
+.i3:focus {
+	border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 	outline: none; /* 기본 포커스 효과 제거 */
 }
-
-
-
-
-
 </style>
 
 
@@ -307,18 +300,22 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 		<div class="tab home-tag" onclick="openTab(0)" id="tab1">
 			<a href="goIndex"><i class="fa-solid fa-house"></i></a>
 		</div>
-	
+
 		<div class="tab" onclick="openTab(1)" id="tab1">
-		<a href="goStoreOrder">주문관리</a></div>
-		
+			<a href="goStoreOrder">주문관리</a>
+		</div>
+
 		<div class="tab" onclick="openTab(2)" id="tab2">
-		<a href="goReservation">완료주문관리</a></div>
-		
+			<a href="goReservation">완료주문관리</a>
+		</div>
+
 		<div class="tab" onclick="openTab(3)" id="tab3">
-		<a href="goConMenu">메뉴관리</a></div>
-			
+			<a href="goConMenu">메뉴관리</a>
+		</div>
+
 		<div class="tab" onclick="openTab(4)" id="tab4">
-		<a href="goMoney">매출관리</a></div>
+			<a href="goMoney">매출관리</a>
+		</div>
 	</div>
 
 
@@ -342,24 +339,33 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 			<div class="row row-cols-1 row-cols-md-2 g-4">
 				<c:forEach items="${m_list}" var="m" varStatus="status">
 					<div class="col">
-						<div class="card h-100">
+						<div class="card h-300">
 							<!-- 이미지 추가 -->
-							<img src="resources/img/KakaoTalk_20240313_215409039.jpg"
-								class="card-img-top" alt="카드 이미지">
-							<div class="card-body">
-								<h5 class="card-title">${m.menu_name}</h5>
-								<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
-								<p class="card-text">${m.menu_desc}</p>
+
+							<div class="card-body"
+								style="display: flex; justify-content: space-between;" >
+								<div>
+									<h5 class="card-title">${m.menu_name}</h5>
+									<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
+									<p class="card-text">${m.menu_desc}</p>
+								</div>
+								<div>
+									<img src="resources/img/KakaoTalk_20240313_215409039.jpg"
+									class="card-img-top" alt="카드 이미지">
+								</div>
+								
+								
 							</div>
-							<div class="card-footer">
-								<button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal"
-									onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')"></button>
+							<div class="card-footer" style="padding: 0px;">
+								<button class="btn btn-primary w-100" data-bs-toggle="modal"
+									data-bs-target="#exampleModal"
+									onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')">수정하기</button>
 							</div>
 						</div>
 					</div>
 				</c:forEach>
 			</div>
-			<div class="text-center mt-4">
+			<div class="text-center mt-4" style="padding: 50px;">
 				<button class="btn btn-success btn-lg" data-bs-toggle="modal"
 					data-bs-target="#exampleModal" onclick="addmenu()">메뉴 추가하기</button>
 				<a href="gosoldout"><button class="btn btn-success btn-lg"
@@ -384,7 +390,8 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 	<div class="modal fade" id="exampleModal" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div
-			class="modal-dialog modal-dialog-centered modal-dialog-scrollable" stystyle="max-width: 1000px;">
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+			stystyle="max-width: 1000px;">
 			<div class="modal-content" style="width: 100%;">
 				<form action="updateMenu" method="post">
 					<input type="hidden" name="menu_idx" id="menu_idx">
@@ -399,21 +406,22 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 
 							<div id="menu-img"
 								style="height: 200px; width: 200px; background: #fffff;">
-								
+
 
 
 							</div>
-							
+
 							<div class="menu-detail"
 								style="height: 200px; width: 350px; background: #fffff;">
 								<article>
 									<p name="product" class="p2">
-										메뉴명<br>
-										<input type="text" class="i3" id="menu_name" name="menu_name">
+										메뉴명<br> <input type="text" class="i3" id="menu_name"
+											name="menu_name">
 									</p>
 
 									<p class="p2">
-										메뉴 가격 <br><input type="text" placeholder="0" class="i3"  id="menu_price"
+										메뉴 가격 <br>
+										<input type="text" placeholder="0" class="i3" id="menu_price"
 											name="menu_price">원
 									</p>
 								</article>
@@ -433,12 +441,12 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 						</div>
 					</div>
 					<div class="file-select-button">
-						<label for="file-upload" class="custom-file-upload"> 파일
-									선택 </label> <input id="file-upload" type="file" name = "menu_img">	
+						<label for="file-upload" class="custom-file-upload"> 파일 선택
+						</label> <input id="file-upload" type="file" name="menu_img">
 					</div>
-					
+
 					<div class="desc">
-						<div style="height: 80px; width: 100%;">
+						<div style="width: 100%; padding:20px;">
 							<p class="p1">메뉴 설명</p>
 							<input style="width: 90%; height: 50px; margin-left: 25px;"
 								class="desc-text-box" id="menu_desc" name="menu_desc">
