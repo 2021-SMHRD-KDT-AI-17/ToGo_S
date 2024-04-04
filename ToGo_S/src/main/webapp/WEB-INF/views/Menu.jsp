@@ -422,7 +422,7 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-bs-dismiss="modal">닫기</button>
-						<input type="submit" class="btn btn-primary" value="수정하기" id="btn">
+						<input type="submit" class="btn btn-primary" id="btn">
 					</div>
 				</form>
 			</div>
@@ -520,14 +520,14 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
        
        // 추가하기 onclick
        function addmenu(){
-          document.getElementById("menu_name").setAttribute("value","");
+    	   document.getElementById("menu_name").setAttribute("value", "");
            // menuPrice 메뉴 가격
-           document.getElementById("menu_price").setAttribute("value",0);
+           document.getElementById("menu_price").setAttribute("value", 0);
            //menuImg 메뉴 이미지
-           document.getElementById("menu_img").setAttribute("value","");
+           /* document.getElementById("menu_img").setAttribute("value", img); */
            // 메뉴 설명
-           document.getElementById("menu_desc").setAttribute("value","");
-           document.getElementById("menu_idx").setAttribute("value",0);
+           document.getElementById("menu_desc").setAttribute("value", "");
+           document.getElementById("menu_idx").setAttribute("value", 0);
            document.getElementById("btn").setAttribute("value","추가하기");
            
        }
