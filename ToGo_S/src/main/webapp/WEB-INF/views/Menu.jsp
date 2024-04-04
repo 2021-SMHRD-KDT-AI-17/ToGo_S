@@ -236,6 +236,7 @@ button:hover {
 }
 
 .gallery-section {
+	margin-top: 100px;
 	padding: 100px 0;
 	background-color: #f8f9fa;
 }
@@ -249,8 +250,7 @@ button:hover {
 }
 
 .card-img-top {
-	width: 180px; /* 이미지의 너비 조절 */
-	height: 160px;
+	width: 170px; /* 이미지의 너비 조절 */
 	/* object-fit: cover; /* 이미지가 카드에 꽉 차게 조절 */ */
 	top: 0; /* 카드의 상단에 위치 */
 	right: 0; /* 카드의 우측에 위치 */
@@ -511,8 +511,8 @@ input[type="file"] {
 									<p class="card-text">${m.menu_desc}</p>
 								</div>
 								<div>
-									<img src="resources/img/KakaoTalk_20240313_215409039.jpg"
-									class="card-img-top" alt="카드 이미지">
+									<img src="resources/img/${m.menu_img }"
+									class="card-img-top" alt="카드 이미지" width = "100px">
 								</div>
 								
 								
