@@ -105,7 +105,7 @@ a {
 }
 
 .first-null-page{
-	width: 1300px;
+	width: 1000px;
 	height:315.72px;
 	background-color: lightgray;
 	overflow-y: auto;
@@ -115,10 +115,6 @@ a {
 	position: absolute;
 	
 	z-index: 4;
-}
-
-.order-number{
-	font-size: 20px;
 }
 
 /* 주문 목록 스타일 */
@@ -185,7 +181,7 @@ button:hover {
 	<div class="tabs">
 	
 		<div class="tab home-tag" onclick="openTab(0)" id="tab1">
-			<a href="goIndex"><i class="fa-solid fa-house"></i></a>
+			<a href="goStoreOrder"><i class="fa-solid fa-house"></i></a>
 		</div>
 	
 		<div class="tab" onclick="openTab(1)" id="tab1">
@@ -193,7 +189,7 @@ button:hover {
 		</div>
 
 		<div class="tab" onclick="openTab(2)" id="tab2">
-			<a href="goReservation">완료주문관리</a>
+			<a href="goReservation">예약관리</a>
 		</div>
 
 		<div class="tab" onclick="openTab(3)" id="tab3">
@@ -224,7 +220,7 @@ button:hover {
 					<!-- 내용을 여기에 추가할 수 있습니다. -->
 					<!-- order 내용-->
 					<div>
-						<p style="font-size: 24px; font-weight: bold;">
+						<p>
 							주문번호 <span id="id_order_idx"></span>번
 						</p>
 					</div>
@@ -232,7 +228,7 @@ button:hover {
 					<div id="detail"></div>
 					<div>
 						<p>
-							<span>25</span>분 후 픽업
+							<span>10</span>분 후 픽업
 						</p>
 						<button onclick="removeElement()">준비 완료</button>
 					</div>
@@ -247,6 +243,7 @@ function removeElement(elementId) {
     var element = document.getElementById("orderIdx_"+order_idx);
     if (element && element.parentNode) {
         element.parentNode.removeChild(element); // 부모 노드에서 해당 요소를 제거합니다.
+        $(".div_tag").hide();
     }
     $.ajax({
     	url:"comOrder",
@@ -323,6 +320,7 @@ function createOrderListItem(orderId, orderAmount) {
         
 
 	function orderDetailMenu(menu_idx, callback) {
+		$(".div_tag").show();
 	    $.ajax({
 	        url: "getMenu",
 	        method: "POST",
@@ -340,15 +338,21 @@ function createOrderListItem(orderId, orderAmount) {
 	}
 
 	function orderDetailClick(order_idx) {
+		
 	    $.ajax({
 	        url: "order_Detail_Select",
 	        method: "POST",
 	        data: { order_idx: order_idx },
 	        success: function(response) {
 	            console.log("성공");
+	            console.log(response);
+	            var detailDiv = document.getElementById('detail');
+	    	    detailDiv.innerHTML = ""; // 기존 내용 초기화
 	            document.getElementById("id_order_idx").innerText = order_idx;
 	            response.forEach(function(menu) {
+	                // 각 메뉴에 대해 orderDetailMenu() 호출
 	                orderDetailMenu(menu.menu_idx, function(menu_name) {
+	                    // orderDetailMenu() 함수가 완료된 후에 createMenu() 호출
 	                    createMenu(menu, menu_name);
 	                });
 	            });
@@ -363,7 +367,6 @@ function createOrderListItem(orderId, orderAmount) {
 	    console.log("함수임");
 	    console.log(menu);
 	    var detailDiv = document.getElementById('detail');
-	    detailDiv.innerHTML = ""; // 기존 내용 초기화
 	    // 새로운 div 요소 생성
 	    var div = document.createElement('div');
 
