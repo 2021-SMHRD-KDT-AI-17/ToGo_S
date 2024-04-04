@@ -10,9 +10,29 @@
     <title>월 매출 확인</title>
     <!-- Chart.js CDN 추가 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+.go-back-button {
+	padding: 10px 20px;
+	font-size:22px;
+	font-weight:bold;
+	margin-left:30px;
+	background-color: #3498db;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	float: right;
+}
+
+</style>
 </head>
+
+
 <body>
     <h1>월 매출 확인</h1>
+
     
     <%-- 데이터베이스 연결 및 데이터 가져오기 --%>
     <%@ page import="kr.smhrd.mapper.OrderMapper" %>
@@ -48,6 +68,8 @@
             }
         }
     %>
+    
+
     
     <!-- 막대 그래프를 표시할 Canvas 요소 -->
     <canvas id="barChart" width="400" ></canvas>
@@ -102,5 +124,11 @@
             }
         });
     </script>
+    
+            	<h2 class="total-price">
+			<a href="goMoney"><button
+				class="go-back-button">뒤로가기</button></a>
+		</h2>
+    
 </body>
 </html>

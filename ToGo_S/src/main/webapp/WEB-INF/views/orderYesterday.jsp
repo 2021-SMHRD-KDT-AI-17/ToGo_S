@@ -61,6 +61,21 @@
             text-align: right; 
            
         }
+        
+        .go-back-button {
+	padding: 10px 20px;
+	font-size:22px;
+	font-weight:bold;
+	margin-left:30px;
+	background-color: #3498db;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	float: right;
+}
+        
     </style>
 </head>
 <body>
@@ -107,8 +122,11 @@
     }
 %>
 </table>
-
-<h2 class="total-price">총 매출 : <%= totalPrice %>원</h2>
+	<h2 class="total-price">
+		총 매출 :
+		<%=totalPrice%>원 <a href="goMoney"><button
+				class="go-back-button">뒤로가기</button></a>
+	</h2>
 
 </body>
 </html>
