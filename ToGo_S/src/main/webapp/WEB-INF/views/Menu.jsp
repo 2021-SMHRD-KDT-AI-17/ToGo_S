@@ -51,6 +51,10 @@ body {
 	flex-direction: column;
 }
 
+.container{
+	height: 700px;
+}
+
 .tabs {
 	display: flex;
 	border-bottom: 1px solid #ddd;
@@ -236,7 +240,7 @@ button:hover {
 }
 
 .gallery-section {
-	margin-top: 100px;
+	margin-top: 0px;
 	padding: 100px 0;
 	background-color: #f8f9fa;
 }
@@ -492,19 +496,23 @@ input[type="file"] {
 
 
 	<!-- 예약 관리------------------------------------------------------------------------------------ -->
-	<section class="gallery-section section parallax-window" id="section-3">
-		<div class="container">
-			<div class="title text-center mb-4">
-				<h3>메뉴 관리</h3>
+	<div style="display: flex; flex-direction: column;">
+			<div style="background:#393f45;">
+				<h3 style="position: relative; left:180px;">메뉴 관리</h3>
 			</div>
-			<div class="row row-cols-1 row-cols-md-2 g-4">
+	<section class="gallery-section section parallax-window" id="section-3">
+		
+		<div class="container" style="overflow-y: auto;">
+		
+			
+			<div class="row row-cols-1 row-cols-md-2 g-4" style="position: relative; bottom:60px;">
 				<c:forEach items="${m_list}" var="m" varStatus="status">
-					<div class="col">
+					<div class="col" style="position: relative; top:100px; left:80px;">
 						<div class="card h-300">
 							<!-- 이미지 추가 -->
 
 							<div class="card-body"
-								style="display: flex; justify-content: space-between;" >
+								<!-- style="display: flex; justify-content: space-between;"  -->>
 								<div>
 									<h5 class="card-title">${m.menu_name}</h5>
 									<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
@@ -526,7 +534,7 @@ input[type="file"] {
 					</div>
 				</c:forEach>
 			</div>
-			<div class="text-center mt-4" style="padding: 50px;">
+			<div class="text-center mt-4" style="padding: 100px; margin-top: 100px" >
 				<button class="btn btn-success btn-lg" data-bs-toggle="modal"
 					data-bs-target="#exampleModal" onclick="addmenu()">메뉴 추가하기</button>
 				<a href="gosoldout"><button class="btn btn-success btn-lg"
@@ -535,13 +543,9 @@ input[type="file"] {
 			</div>
 		</div>
 	</section>
-
-
-
-
-
-
 	</div>
+
+
 
 	<div class="overlay"></div>
 
