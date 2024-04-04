@@ -105,7 +105,7 @@ a {
 }
 
 .first-null-page{
-	width: 1000px;
+	width: 1300px;
 	height:315.72px;
 	background-color: lightgray;
 	overflow-y: auto;
@@ -115,6 +115,10 @@ a {
 	position: absolute;
 	
 	z-index: 4;
+}
+
+.order-number{
+	font-size: 20px;
 }
 
 /* 주문 목록 스타일 */
@@ -220,7 +224,7 @@ button:hover {
 					<!-- 내용을 여기에 추가할 수 있습니다. -->
 					<!-- order 내용-->
 					<div>
-						<p>
+						<p style="font-size: 24px; font-weight: bold;">
 							주문번호 <span id="id_order_idx"></span>번
 						</p>
 					</div>
