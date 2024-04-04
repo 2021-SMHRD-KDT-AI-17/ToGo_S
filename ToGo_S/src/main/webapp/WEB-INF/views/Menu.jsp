@@ -27,6 +27,165 @@ https://www.tooplate.com/view/2123-simply-amazed
 -->
 
 <style>
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f2f2f2;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #393f45;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+}
+
+/* 탭과 컨테이너 스타일 */
+.tab-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.tabs {
+	display: flex;
+	border-bottom: 1px solid #ddd;
+}
+
+.tab {
+	flex: 1;
+	height: 60px;
+	background-color: #4a4a4a;
+	border-right: 1px solid #ddd;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: background-color 0.3s;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.tab:hover {
+	background-color: #333333; /* 더 어두운 회색 */
+}
+
+.tab:last-child {
+	border-right: none;
+}
+
+.active-tab {
+	background-color: #3498db;
+	color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.content-container {
+	display: flex;
+}
+
+.left-content {
+	width: 39%;
+	height:315.72px;
+	background-color: #4a4a4a;
+	overflow-y: auto;
+	padding: 20px;
+	color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	position: relative;
+	z-index: 999;
+}
+
+.right-content {
+	width: 60%;
+	background-color: lightgray;
+	overflow-y: auto;
+	padding: 20px;
+	border-left: 1px solid #ddd;
+	font-weight: bold;
+	position: relative;
+	z-index: 3;
+}
+
+.first-null-page{
+	width: 2000px;
+	height:315.72px;
+	background-color: lightgray;
+	overflow-y: auto;
+	padding: 20px;
+	border-left: 1px solid #ddd;
+	right:25px;
+	position: absolute;
+	
+	z-index: 4;
+}
+
+/* 주문 목록 스타일 */
+.left-content ul {
+	padding: 0;
+	list-style: none;
+	margin-top: 0;
+}
+
+.left-content ul li {
+	padding: 13px;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	font-weight: bold;
+}
+
+.left-content ul li:hover {
+	background-color: #333333; /* 더 어두운 회색 */
+}
+
+.left-content ul li:last-child {
+	border-bottom: none;
+}
+
+/* 주문 내용 스타일 */
+.order-info p {
+	margin: 5px 0;
+}
+
+.order-info span {
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+/* 버튼 스타일 */
+button {
+	padding: 10px 20px;
+	background-color: #3498db;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #2980b9;
+}
+
+.fa-solid{
+	font-size: 20px;
+}
+
+.home-tag{
+	background: #1F1F77;
+}
+
 /* 기본 버튼 스타일 */
 .btn-1 {
 	background-color: gray; /* 버튼 배경색 */
@@ -288,6 +447,8 @@ input[type="file"] {
 	border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 	outline: none; /* 기본 포커스 효과 제거 */
 }
+
+
 </style>
 
 
@@ -473,7 +634,6 @@ input[type="file"] {
 
 
 
-	<footer class="footer container container-2"> </footer>
 	</section>
 
 	<!-- 매출관리------------------------------------------------------------------------------------ -->
@@ -485,7 +645,7 @@ input[type="file"] {
 	<script src="resources/js/slick.js"></script>
 	<script src="resources/js/parallax.min.js"></script>
 	<script src="resources/js/templatemo-script.js"></script>
-
+	<script src="https://kit.fontawesome.com/d97bdf4abd.js" crossorigin="anonymous"></script>
 	<script type="text/javascript">
     
        const tabList = document.querySelectorAll('.tab_menu .list li');
