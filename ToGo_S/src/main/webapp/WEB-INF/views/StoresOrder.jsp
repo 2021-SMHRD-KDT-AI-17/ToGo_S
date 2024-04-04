@@ -82,7 +82,7 @@ a {
 }
 
 .left-content {
-   width: 39%;
+   width: 37.5%;
    height: 681px;
    background-color: #4a4a4a;
    overflow-y: auto;
@@ -234,6 +234,21 @@ button:hover {
 .a-tag-font-size{
    font-size: 22px;
 }
+
+.page-name-box {
+   height: 40px;
+   background-color: #181818;
+   color: #E1E1E1;
+   font-size: 30px;
+   font-weight: bold;
+   padding-left: 30px;
+   padding-top: 15px;
+   padding: 15px 0px 20px 30px;
+}
+
+.order-number{
+	font-size: 22px;
+}
 </style>
 </head>
 
@@ -260,6 +275,7 @@ button:hover {
          <a href="goMoney" class="a-tag-font-size">매출관리</a>
       </div>
    </div>
+   <div class="page-name-box">주문 관리 페이지</div>
 
    <div class="content-container">
       <!-- 주문 목록 list-->
