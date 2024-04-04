@@ -255,6 +255,7 @@ button:hover {
 
 .card-img-top {
 	width: 170px; /* 이미지의 너비 조절 */
+	height 120px;
 	/* object-fit: cover; /* 이미지가 카드에 꽉 차게 조절 */ */
 	top: 0; /* 카드의 상단에 위치 */
 	right: 0; /* 카드의 우측에 위치 */
@@ -520,7 +521,7 @@ input[type="file"] {
 									</div>
 									<div>
 										<img src="resources/img/${m.menu_img }" class="card-img-top"
-											alt="카드 이미지" width="100px">
+											alt="카드 이미지" height = "130px" weight = "130px">
 									</div>
 
 
@@ -577,7 +578,7 @@ input[type="file"] {
 
 							<div id="menu-img"
 								style="height: 200px; width: 200px; background: #fffff;">
-
+								<img id="img" height = "120px" weight = "120px">
 
 
 							</div>
@@ -712,7 +713,7 @@ input[type="file"] {
           // menuPrice 메뉴 가격
           document.getElementById("menu_price").setAttribute("value", price);
           //menuImg 메뉴 이미지
-          /* document.getElementById("menu_img").setAttribute("value", img); */
+          document.getElementById("img").setAttribute("src", "resources/img/" +img);
           // 메뉴 설명
           document.getElementById("menu_desc").setAttribute("value", desc);
           document.getElementById("menu_idx").setAttribute("value", idx);
