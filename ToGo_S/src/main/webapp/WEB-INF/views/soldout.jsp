@@ -95,8 +95,8 @@
         </c:forEach>
     </table>
     
-<!--     <button onclick="updateSoldout()">수정하기</button>
- -->
+     <a href="goConMenu"><button>수정완료</button></a>
+ 
  
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>

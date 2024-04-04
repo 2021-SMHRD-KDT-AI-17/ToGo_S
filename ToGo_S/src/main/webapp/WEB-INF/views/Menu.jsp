@@ -25,61 +25,6 @@ Tooplate 2123 Simply Amazed
 https://www.tooplate.com/view/2123-simply-amazed
 
 -->
-</head>
-
-<body>
-
-
-
-
-	<!-- 헤드 끝 --------------------------------------------------------------------------------------------------------------------------------                        -->
-
-	<!-- 하단바 버튼------------------------------------------------------------------------------- -->
-
-
-
-
-
-	<!-- 주문관리------------------------------------------------------------------------------------ -->
-
-
-	<!-- 예약 관리------------------------------------------------------------------------------------ -->
-	<section class="gallery-section section parallax-window" id="section-3">
-		<div class="container">
-			<div class="title text-center mb-4">
-				<h3>메뉴 관리</h3>
-			</div>
-			<div class="row row-cols-1 row-cols-md-2 g-4">
-				<c:forEach items="${m_list}" var="m" varStatus="status">
-					<div class="col">
-						<div class="card h-100">
-							<!-- 이미지 추가 -->
-							<img src="resources/img/KakaoTalk_20240313_215409039.jpg"
-								class="card-img-top" alt="카드 이미지">
-							<div class="card-body">
-								<h5 class="card-title">${m.menu_name}</h5>
-								<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
-								<p class="card-text">${m.menu_desc}</p>
-							</div>
-							<div class="card-footer">
-								<button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal"
-									onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')"></button>
-							</div>
-						</div>
-					</div>
-				</c:forEach>
-			</div>
-			<div class="text-center mt-4">
-				<button class="btn btn-success btn-lg" data-bs-toggle="modal"
-					data-bs-target="#exampleModal" onclick="addmenu()">메뉴 추가하기</button>
-				<a href="gosoldout"><button class="btn btn-success btn-lg"
-						data-bs-toggle="modal" data-bs-target="#exampleModal">품절
-						상품 관리</button></a>
-			</div>
-		</div>
-	</section>
-
-
 
 	<style>
 /* 기본 버튼 스타일 */
@@ -346,7 +291,87 @@ border-color: #007bff; /* 포커스가 됐을 때 테두리 색상 변경 */
 	outline: none; /* 기본 포커스 효과 제거 */
 }
 
+
+
+
+
 </style>
+
+
+
+</head>
+
+<body>
+
+	<div class="tabs">
+		<div class="tab home-tag" onclick="openTab(0)" id="tab1">
+			<a href="goIndex"><i class="fa-solid fa-house"></i></a>
+		</div>
+	
+		<div class="tab" onclick="openTab(1)" id="tab1">
+		<a href="goStoreOrder">주문관리</a></div>
+		
+		<div class="tab" onclick="openTab(2)" id="tab2">
+		<a href="goReservation">완료주문관리</a></div>
+		
+		<div class="tab" onclick="openTab(3)" id="tab3">
+		<a href="goConMenu">메뉴관리</a></div>
+			
+		<div class="tab" onclick="openTab(4)" id="tab4">
+		<a href="goMoney">매출관리</a></div>
+	</div>
+
+
+	<!-- 헤드 끝 --------------------------------------------------------------------------------------------------------------------------------                        -->
+
+	<!-- 하단바 버튼------------------------------------------------------------------------------- -->
+
+
+
+
+
+	<!-- 주문관리------------------------------------------------------------------------------------ -->
+
+
+	<!-- 예약 관리------------------------------------------------------------------------------------ -->
+	<section class="gallery-section section parallax-window" id="section-3">
+		<div class="container">
+			<div class="title text-center mb-4">
+				<h3>메뉴 관리</h3>
+			</div>
+			<div class="row row-cols-1 row-cols-md-2 g-4">
+				<c:forEach items="${m_list}" var="m" varStatus="status">
+					<div class="col">
+						<div class="card h-100">
+							<!-- 이미지 추가 -->
+							<img src="resources/img/KakaoTalk_20240313_215409039.jpg"
+								class="card-img-top" alt="카드 이미지">
+							<div class="card-body">
+								<h5 class="card-title">${m.menu_name}</h5>
+								<h6 class="card-subtitle mb-2 text-muted">${m.menu_price}원</h6>
+								<p class="card-text">${m.menu_desc}</p>
+							</div>
+							<div class="card-footer">
+								<button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal"
+									onclick="detailMenu(${m.menu_idx },'${m.menu_name}', ${m.menu_price },'${m.menu_desc}', '${m.menu_soldout }', '${m.menu_img }')"></button>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+			<div class="text-center mt-4">
+				<button class="btn btn-success btn-lg" data-bs-toggle="modal"
+					data-bs-target="#exampleModal" onclick="addmenu()">메뉴 추가하기</button>
+				<a href="gosoldout"><button class="btn btn-success btn-lg"
+						data-bs-toggle="modal" data-bs-target="#exampleModal">품절
+						상품 관리</button></a>
+			</div>
+		</div>
+	</section>
+
+
+
+
 
 
 	</div>
