@@ -1,105 +1,134 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="java.sql.Connection, java.sql.DriverManager, java.sql.Statement, java.sql.ResultSet, java.sql.SQLException"%>
+	pageEncoding="UTF-8"%>
+<%@ page
+	import="java.sql.Connection, java.sql.DriverManager, java.sql.Statement, java.sql.ResultSet, java.sql.SQLException"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>품절상품 관리</title>
+<meta charset="UTF-8">
+<title>품절상품 관리</title>
 </head>
 <style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
+table {
+	border-collapse: collapse;
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+}
 
-    th {
-        background-color: #343a40;
-        color: #ffffff;
-        font-weight: bold;
-        padding: 15px 10px;
-        text-align: left;
-        border-bottom: 2px solid #dee2e6;
-    }
+body {
+	background: #C5C6BD;
+	text-align: center;
+}
 
-    td {
-        padding: 15px 10px;
-        border-bottom: 1px solid #dee2e6;
-        font-weight: bold;
-    }
+h2 {
+	font-size: 30px;
+}
 
-    tr:nth-child(even) {
-        background-color: #f8f9fa;
-    }
+th {
+	background-color: #343a40;
+	color: #ffffff;
+	font-weight: bold;
+	font-size:18px;
+	padding: 15px 10px;
+	text-align: center;
+	border-bottom: 2px solid #dee2e6;
+}
 
-    tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
+td {
+	padding: 15px 10px;
+	border-bottom: 1px solid #dee2e6;
+	font-weight: bold;
+}
 
-    tr:hover {
-        background-color: #e9ecef;
-    }
+tr:nth-child(even) {
+	background-color: #f8f9fa;
+}
 
-    button {
-        padding: 10px 20px;
-        background-color: #3498db;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        float: right;
-    }
+tr:nth-child(odd) {
+	background-color: #ffffff;
+}
 
-    .checkbox-container {
-        display: inline-block;
-        margin-right: 10px;
-    }
+tr:hover {
+	background-color: #e9ecef;
+}
 
-    .checkbox-container input[type="checkbox"] {
-        width: 25px;
-        height: 25px;
-        margin-right: 5px;
-    }
+button {
+	padding: 10px 20px;
+	background-color: #3498db;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size:24px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	float: center;
+}
 
-    button:hover {
-        background-color: #2980b9;
-    }
+.checkbox-container {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+}
+
+button:hover {
+	background-color: #2980b9;
+}
+
+.container-title {
+	background: #597C45;
+	height: 60px;
+	padding-top: 15px;
+	margin-top: 100px;
+	border-radius: 10px;
+	color: #FAFAFA;
+}
+
+.update-com-button{
+	width: 700px;
+	height: 60px;
+}
 </style>
-<body>
-    <h2>품절상품 관리</h2>
+<body style="margin: 0 auto; max-width: 700px;">
+	<h1 class="container-title">품절 상품 관리</h1>
 
-    <table border="1">
-        <tr>
-            <th>메뉴명</th>
-            <th>가격</th>
-            <th>품절여부</th>
-        </tr>
+	<table border="1">
+		<tr>
+			<th>메뉴명</th>
+			<th>가격</th>
+			<th>품절여부</th>
+		</tr>
 
-        <c:forEach items="${m_list}" var="m" varStatus="status">
-            <tr>
-                <td>${m.menu_name}</td>
-                <td>${m.menu_price}원</td>
-                <td>
-                    <div class="checkbox-container">
-                        <input type="checkbox" class="soldout-checkbox" data-menu-name="${m.menu_name}"
-                            data-menu-soldout="${m.menu_soldout}">
-                    </div>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
-    
-     <a href="goConMenu"><button>수정완료</button></a>
- 
- 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
+		<c:forEach items="${m_list}" var="m" varStatus="status">
+			<tr>
+				<td>${m.menu_name}</td>
+				<td>${m.menu_price}원</td>
+				<td>
+					<div class="checkbox-container">
+						<input type="checkbox" class="soldout-checkbox"
+							data-menu-name="${m.menu_name}"
+							data-menu-soldout="${m.menu_soldout}">
+					</div>
+				</td>
+			</tr>
+		</c:forEach>
+	</table>
+
+	<a href="goConMenu"><button class="update-com-button">수정완료</button></a>
+
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
 const checkboxes = document.querySelectorAll('.soldout-checkbox');
 
 checkboxes.forEach(checkbox => {
@@ -140,6 +169,6 @@ checkboxes.forEach(checkbox => {
     } */
 </script>
 
-    </script>
+	</script>
 </body>
 </html>
