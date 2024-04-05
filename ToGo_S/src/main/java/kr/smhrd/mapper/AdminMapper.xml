@@ -3,7 +3,7 @@
 <mapper namespace="kr.smhrd.mapper.AdminMapper">
 
 	<select id="orderList" resultType="kr.smhrd.entity.Order">
-		select * from orders where store_id = "admin" LIMIT 5
+		SELECT * FROM orders WHERE store_id = 'admin' AND DATE(ordered_at) = CURDATE();
 	</select>
     
 

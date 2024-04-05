@@ -758,7 +758,7 @@ input[type="file"] {
            // menuPrice 메뉴 가격
            document.getElementById("menu_price").setAttribute("value", 0);
            //menuImg 메뉴 이미지
-           /* document.getElementById("menu_img").setAttribute("value", img); */
+           document.getElementById("img").setAttribute("src", "");
            // 메뉴 설명
            document.getElementById("menu_desc").setAttribute("value", "");
            document.getElementById("menu_idx").setAttribute("value", 0);
