@@ -260,19 +260,19 @@ button:hover {
       </div>
 
       <div class="tab" onclick="openTab(1)" id="tab1">
-         <a href="goStoreOrder" class="a-tag-font-size">주문관리</a>
+         <a href="goStoreOrder" class="a-tag-font-size">주문 관리</a>
       </div>
 
       <div class="tab" onclick="openTab(2)" id="tab2">
-         <a href="goReservation" class="a-tag-font-size">예약관리</a>
+         <a href="goReservation" class="a-tag-font-size">예약 관리</a>
       </div>
 
       <div class="tab" onclick="openTab(3)" id="tab3">
-         <a href="goConMenu" class="a-tag-font-size">메뉴관리</a>
+         <a href="goConMenu" class="a-tag-font-size">메뉴 관리</a>
       </div>
 
       <div class="tab" onclick="openTab(4)" id="tab4">
-         <a href="goMoney" class="a-tag-font-size">매출관리</a>
+         <a href="goMoney" class="a-tag-font-size">매출 관리</a>
       </div>
    </div>
    <div class="page-name-box">주문 관리 페이지</div>
