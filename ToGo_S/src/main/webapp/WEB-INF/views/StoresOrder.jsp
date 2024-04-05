@@ -264,7 +264,7 @@ button:hover {
       </div>
 
       <div class="tab" onclick="openTab(2)" id="tab2">
-         <a href="goReservation" class="a-tag-font-size">예약 관리</a>
+         <a href="goReservation" class="a-tag-font-size">완료주문관리</a>
       </div>
 
       <div class="tab" onclick="openTab(3)" id="tab3">

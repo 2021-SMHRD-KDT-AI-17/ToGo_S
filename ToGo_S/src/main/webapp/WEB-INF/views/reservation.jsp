@@ -212,7 +212,7 @@ button:hover {
       <a href="goStoreOrder" class="a-tag-font-size">주문 관리</a></div>
       
       <div class="tab" onclick="openTab(2)" id="tab2">
-      <a href="goReservation" class="a-tag-font-size">예약 관리</a></div>
+      <a href="goReservation" class="a-tag-font-size">완료주문관리</a></div>
       
       <div class="tab" onclick="openTab(3)" id="tab3">
       <a href="goConMenu" class="a-tag-font-size">메뉴 관리</a></div>
