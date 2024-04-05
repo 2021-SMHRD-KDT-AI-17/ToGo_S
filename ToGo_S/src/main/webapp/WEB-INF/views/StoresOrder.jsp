@@ -256,7 +256,7 @@ button:hover {
    <div class="tabs">
 
       <div class="tab home-tag" onclick="openTab(0)" id="tab1">
-         <a href="goStoreOrder"><i class="fa-solid fa-house"></i></a>
+         <a href="goIndex"><i class="fa-solid fa-house"></i></a>
       </div>
 
       <div class="tab" onclick="openTab(1)" id="tab1">
