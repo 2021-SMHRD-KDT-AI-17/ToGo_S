@@ -289,13 +289,13 @@ button:hover {
       <div class="title-content-button"
          style="display: flex; flex-direction: column;">
          <div id="" class="first-null-page"></div>
-         <div class="order-idx-box">
+         <div class="order-idx-box  div_tag">
             <p class="a-tag-font-size">
                주문번호 <span id="id_order_idx"></span>번
             </p>
          </div>
-         <div class="div_tag">
-            <div id="rightContent" class="right-content">
+         <div>
+            <div id="rightContent" class="right-content  div_tag">
 
                <!-- 내용을 여기에 추가할 수 있습니다. -->
                <div class="div2_tag">
@@ -308,7 +308,7 @@ button:hover {
                </div>
             </div>
          </div>
-         <div class="pick-up-box">
+         <div class="pick-up-box  div_tag">
             <p class="give-padding1">
                <span id = "id_pick_up_time"></span>분 후 픽업
             </p>
